@@ -26,7 +26,7 @@ const Announcement_Category = () => {
                     <>
                         <Link to={`/announcement/detail/${item.A_id}`}>
                             <Announcement_other_Category_container>
-                                <Announcement_Category_image src={require(`../../images/Announcement_Images/${item.A_img}`)}></Announcement_Category_image>
+                                <Announcement_Category_image src={`http://140.137.51.13:5000/${item.A_img}`}></Announcement_Category_image>
                                 <Announcement_Category_title>{item.A_smellTitle}</Announcement_Category_title>
                             </Announcement_other_Category_container>
                         </Link>

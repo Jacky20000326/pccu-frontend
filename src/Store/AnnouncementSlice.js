@@ -27,7 +27,7 @@ export const updateAnnouncement = createAsyncThunk(
 export const getAllAnnouncement = createAsyncThunk(
 	'Get/Announcement',
 	async () => {
-		let result = await axios.get('http://140.137.51.13:3003/UploadAnnouncement/get/PerAnnouncement').then(res => res.data)
+		let result = await axios.get('http://140.137.51.13:3003/api/UploadAnnouncement/get/PerAnnouncement').then(res => res.data)
 		return result
 	}
 )

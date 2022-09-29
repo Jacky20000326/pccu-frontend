@@ -7,25 +7,10 @@ import Video from "../components/Home_Components/Video";
 import axios from 'axios'
 
 const Home = () => {
-	const [data,setData] = useState(null)
-
-	const test = async()=>{
-		const data = await axios.get('http://140.137.51.13:3003/api/auth/getAllMember').then(res => setData(item => item = res.data.data)).catch((err)=>{
-			console.log(err)
-		})
-		
-	}
-	useEffect(()=>{
-		test()
-	},[])
+	
 	return (
 		< >
-		<h1>{!data?'loading':data.map(item => (
-			<>
-			{item.M_gmail}
-			</>
-			
-		))}</h1>
+		
 			<Carousel ></Carousel>
 			<Announcement></Announcement>
 			<SeparateImg />

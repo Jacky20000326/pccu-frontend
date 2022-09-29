@@ -47,7 +47,7 @@ const Carousel = () => {
                     // Loading ? <> loading </> :
                     UploadImage.map((item) => (
                         <Img_container>
-                            <Image src={require(`../../images/Home_Images/${item.I_file}`)} />
+                            <Image src={`http://140.137.51.13:5000/${item.I_file}`} />
                         </Img_container>
                     ))
                 }

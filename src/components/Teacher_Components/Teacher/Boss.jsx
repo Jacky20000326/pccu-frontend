@@ -38,7 +38,9 @@ const Boss = () => {
                         <Teacher_container>
 
                             <Teacher_master_image_container>
-                                <Teacher_image src={require(`../../../images/Teacher_Images/${item.TR_image}`)} />
+                                <div> zz {item.TR_image}</div>
+                              
+                                <Teacher_image src={`http://140.137.51.13:5000/${item.TR_image}`} />
                             </Teacher_master_image_container>
                             <Teacher_master_block_container>
                                 <Teacher_name>{item.TR_name}</Teacher_name>

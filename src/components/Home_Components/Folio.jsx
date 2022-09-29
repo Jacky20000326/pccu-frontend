@@ -43,21 +43,21 @@ const Folio = () => {
         <All_Topics_Container >
             <Folio_txt>2021年度畢業製作代表作品</Folio_txt>
             <hr />
-            {/* {
+            {
                 TopicData.length == 6 ?
                     <Folio_Container>
                         <Folio_Container_row>
                             <div onClick={() => { GetCurrentTopic(TopicData[0]) }} style={img_big_container_style}>
-                                {Loaging ? <>Loading</> : <Folio_image_big src={require(`../../images/Topic_Images/${TopicData[0].TP_img}`)} />}
+                                {Loaging ? <>Loading</> : <Folio_image_big src={`http://140.137.51.13:5000/${TopicData[0].TP_img}`}  />}
 
                             </div>
                             <Folio_Container_child_row>
                                 <div onClick={() => { GetCurrentTopic(TopicData[1]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : TopicData[1] ? <Folio_image_small src={require(`../../images/Topic_Images/${TopicData[1].TP_img}`)} /> : <></>}
+                                    {Loaging ? <>Loading</> : TopicData[1] ? <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[1].TP_img}`} /> : <></>}
 
                                 </div>
                                 <div onClick={() => { GetCurrentTopic(TopicData[2]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : <Folio_image_small src={require(`../../images/Topic_Images/${TopicData[2].TP_img}`)} />}
+                                    {Loaging ? <>Loading</> : <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[2].TP_img}`} />}
 
                                 </div>
                             </Folio_Container_child_row>
@@ -65,21 +65,21 @@ const Folio = () => {
                         <Folio_Container_row>
                             <Folio_Container_child_row>
                                 <div onClick={() => { GetCurrentTopic(TopicData[3]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : <Folio_image_small src={require(`../../images/Topic_Images/${TopicData[3].TP_img}`)} />}
+                                    {Loaging ? <>Loading</> : <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[3].TP_img}`} />}
 
                                 </div>
                                 <div onClick={() => { GetCurrentTopic(TopicData[4]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : <Folio_image_small src={require(`../../images/Topic_Images/${TopicData[4].TP_img}`)} />}
+                                    {Loaging ? <>Loading</> : <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[4].TP_img}`} />}
 
                                 </div>
                             </Folio_Container_child_row>
                             <div onClick={() => { GetCurrentTopic(TopicData[5]) }} style={img_big_container_style}>
-                                {Loaging ? <>Loading</> : <Folio_image_big src={require(`../../images/Topic_Images/${TopicData[5].TP_img}`)} />}
+                                {Loaging ? <>Loading</> : <Folio_image_big  src={`http://140.137.51.13:5000/${TopicData[5].TP_img}`} />}
 
                             </div>
                         </Folio_Container_row>
                     </Folio_Container> : <div style={{ color: "#f8b6b5", fontSize: "30px", border: "2px solid #f8b6b5", padding: "10px 20px 10px 20px" }}>即將公告</div>
-            } */}
+            }
 
 
             {/* // 傳入index判斷燈箱顯示，及傳入state來判斷燈箱是否開啟 */}

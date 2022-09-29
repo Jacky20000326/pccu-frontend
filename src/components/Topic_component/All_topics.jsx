@@ -13,7 +13,7 @@ const All_topics = ({ topic }) => {
                         <motion.div initial={{ opacity: 0, top: "-50%", y: 0 }} animate={{ opacity: 1, y: -20, }} exit={{ opacity: 1, scale: .8, y: 0 }} transition={{ duration: 0.3 }}>
                             <Topics_item_container id={item.id} key={item.id}>
                                 <Topics_image_container>
-                                    <Topics_image src={require(`../../assets/Topic_img/topic${item.img_url}.jpeg`)} />
+                                    <Topics_image  src={`http://140.137.51.13:5000/${item.img_url}`} />
                                 </Topics_image_container>
                                 <Topics_item_constiner>
                                     <Flex_container>

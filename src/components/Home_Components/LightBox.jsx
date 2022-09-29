@@ -52,7 +52,7 @@ const LightBox = ({ title, LightboxState, CloseLightbox }) => {
 
                         <LeftArrow onClick={() => { preImage() }} />
                         {
-                            <LightbocImage src={require(`../../images/Topic_Images/${topicDetailData[SlideIndex]?.TPI_src}`)}></LightbocImage>
+                            <LightbocImage src={`http://140.137.51.13:5000/${topicDetailData[SlideIndex]?.TPI_src}`} ></LightbocImage>
                         }
 
                         {/* <LightbocImage src={fakeSlideData[IndexOfImg]?.url} /> */}
