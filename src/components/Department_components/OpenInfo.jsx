@@ -52,7 +52,7 @@ const OpenResource_link = styled.a`
         margin-right: 10px;
     }
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        width: 60vw;
+        width: 80vw;
 	}
     
 `

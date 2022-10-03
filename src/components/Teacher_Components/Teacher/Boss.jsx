@@ -38,7 +38,7 @@ const Boss = () => {
                         <Teacher_container>
 
                             <Teacher_master_image_container>
-                                <div> zz {item.TR_image}</div>
+                               
                               
                                 <Teacher_image src={`http://140.137.51.13:5000/${item.TR_image}`} />
                             </Teacher_master_image_container>
@@ -108,6 +108,7 @@ const Teacher_container = styled.div`
 const Teacher_master_image_container = styled.div`
     flex: 1.5;
     height: auto;
+    min-height: 180px;
 `
 const Teacher_image = styled.img`
     width: 100%;
@@ -127,7 +128,7 @@ const Teacher_name = styled.div`
         position: absolute;
         top: -50px;
         left: 0px;
-        font-size: 1em;
+        font-size: 1rem;
         background-color: #F69393;
         opacity: 0.9;
         padding: 5px 10px 5px 10px;
@@ -145,13 +146,13 @@ const Teacher_job_title = styled.div`
 const Teacher_school = styled.div`
     margin-top: 10px;
     font-weight: 300;
-    font-size: 10px;
+    font-size: 0.8rem;
    
 `
 const Teacher_specialized = styled.div`
     margin-top: 15px;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 0.8rem;
     color: #F69393;
 `
 const Teacher_professor_container = styled.div`

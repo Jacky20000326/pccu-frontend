@@ -77,12 +77,13 @@ const Separator = styled.div`
 `;
 const Category_container = styled.div`
 	flex: 3; 
-	padding: 80px 0px 0px 240px;
+	margin-top: 80px;
+    margin-left: max(150px);
 	@media (max-width: ${({ theme }) => theme.w_900.w}) {
         display: flex;
 		flex-direction: column;
-
-		padding: 0px ;
+		
+		margin: 0px ;
 
 	}
 

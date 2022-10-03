@@ -114,7 +114,7 @@ const VideoImage = styled.iframe`
     width: 200px;
     height: auto;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        width: 150px;
+        width: 70vw;
         max-height: 180px;
 
 
@@ -144,7 +144,7 @@ const VideoTitle = styled.h3`
     font-size: 20px;
     color: #f59392;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        font-size: 13px;
+        font-size: 1.2rem;
 
 	}
 
@@ -154,7 +154,7 @@ const VideoDescription = styled.div`
     width: 80%;
     color: #666666;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        font-size: 8px;
+        font-size: 0.9rem;
 
 	}
 `

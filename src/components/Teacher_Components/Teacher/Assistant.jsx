@@ -30,7 +30,7 @@ const Assistant = () => {
                         return (
                             <Teacher_master_container>
                                 <Teacher_master_image_container>
-                                    <Teacher_image src={require(`../../../images/Teacher_Images/${data.TR_image}`)} />
+                                    <Teacher_image src={`http://140.137.51.13:5000/${data.TR_image}`} />
                                     <Teacher_name>{data.TR_name}</Teacher_name>
                                 </Teacher_master_image_container>
                                 <Teacher_master_block_container>
@@ -87,6 +87,7 @@ const Teacher_master_image_container = styled.div`
 const Teacher_image = styled.img`
     width: 100%;
     height: 100%;
+    min-height: 180px;
 `
 const Teacher_master_block_container = styled.div`
     flex: 5;

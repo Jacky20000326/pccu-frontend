@@ -68,6 +68,8 @@ const Features = () => {
 const Feature_png_1 = styled.img`
     width: 60vw;
     height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
     @media (max-width: ${({ theme }) => theme.w_900.w}) {
         width: 80vw;
 	}

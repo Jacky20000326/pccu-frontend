@@ -18,6 +18,7 @@ const All_announcement = () => {
 
     const getPerAnnouncementData = async (data) => {
         let respond = await axios.post('http://140.137.51.13:3003/api/UploadAnnouncement/get/search/Announcement', { id: data }).then(res => res.data)
+        console.log(respond)
         setAnnouncementData(item => item = respond)
 
     }
@@ -26,6 +27,7 @@ const All_announcement = () => {
 
 
     const getAnnouncementRault = async () => {
+        console.log(params.id)
         await getPerAnnouncementData(params.id)
 
     }

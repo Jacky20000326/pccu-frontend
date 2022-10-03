@@ -158,6 +158,7 @@ const Context = styled.p`
     font-weight: 400;
     line-height: 25px;
     margin-left: 20px;
+    text-align: justify;
 `
 const Link = styled.a`
     text-decoration: none;

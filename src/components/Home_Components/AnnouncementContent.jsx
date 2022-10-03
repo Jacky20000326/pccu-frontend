@@ -41,7 +41,7 @@ const AnnouncementStyled = styled.div`
 `;
 const Title = styled.div`
 	font-weight: 500;
-	font-size: 0.4em;
+	font-size: 1.5rem;
 	color: #666666;
 	&:after {
 		content: "";
@@ -65,7 +65,7 @@ const Test = styled.div`
 	font-size: 0.3em;
 	margin-top: 21px;
 	@media (max-width: ${({ theme }) => theme.w_900.w}) {
-        font-size: 0.2em;
+        font-size: 1rem;
 		
 	}
 	
@@ -79,6 +79,7 @@ const Info = styled.div`
 const Time = styled.div`
 	color: #949494;
 	font-size: 0.2em;
+	white-space: nowrap;
 	
 `;
 const Label = styled.div`
@@ -91,6 +92,7 @@ const Label = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	white-space: nowrap;
 	@media (max-width: ${({ theme }) => theme.w_900.w}) {
 		display: none;
 	}
@@ -110,6 +112,7 @@ const Separator = styled.div`
 const AnnouncementImageContainer = styled.div`
 	flex: 1;	
 	margin-left: 3em;
+	object-fit: cover;
 	
 
 `

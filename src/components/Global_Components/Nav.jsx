@@ -117,7 +117,7 @@ const NavStyled = styled.nav`
 	padding: 0px 6rem  0px 6rem ;
 	position: relative;
 	@media (max-width: ${(prop) => prop.theme.w_900.w}) {
-		padding: 0px 3rem 0px 3rem;
+		padding: 0px 1.3rem 0px 1.3rem;
 	}
 	
 `;
