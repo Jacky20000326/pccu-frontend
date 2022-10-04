@@ -27,7 +27,11 @@ const Announcement_Category = () => {
                         <Link to={`/announcement/detail/${item.A_id}`}>
                             <Announcement_other_Category_container>
                                 <Announcement_Category_image src={`http://140.137.51.13:5000/${item.A_img}`}></Announcement_Category_image>
-                                <Announcement_Category_title>{item.A_smellTitle}</Announcement_Category_title>
+                                <div style={{display: 'flex',flexDirection: 'column',justifyContent: 'space-evenly'}}>
+                                    <Announcement_Category_title>{item.A_smellTitle}</Announcement_Category_title>
+                                    <Announcement_Category_time>{moment(item.A_createTime).format('YYYY-MM-DD')}</Announcement_Category_time>
+                                </div>
+                               
                             </Announcement_other_Category_container>
                         </Link>
 
@@ -63,13 +67,18 @@ const Announcement_other_Category_container = styled.div`
 `
 const Announcement_Category_image = styled.img`
     width: 70px;
-    height: auto;
+    height: 90px;
     margin-right: 20px;
+    object-fit: contain;
    
 `
 const Announcement_Category_title = styled.div`
-    font-size: 12px;
+    font-size: 1rem;
     color: #ee8987;
+`
+const Announcement_Category_time = styled.div`
+    font-size: 0.8rem;
+    color: #555555;
 `
 const Announcement_Category_allcaregory = styled.h4`
     font-size: 16px;

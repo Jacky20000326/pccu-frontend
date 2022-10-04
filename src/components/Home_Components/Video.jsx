@@ -155,6 +155,7 @@ const VideoDescription = styled.div`
     color: #666666;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
         font-size: 0.9rem;
+        text-align: center;
 
 	}
 `

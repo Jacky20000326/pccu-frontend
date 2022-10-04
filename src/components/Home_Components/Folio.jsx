@@ -146,10 +146,11 @@ const Folio_Container_child_row = styled.div`
 `
 const Folio_image_big = styled.img`
     width: 100%;
-    height: auto;
+    height: 100%;
     background-size: cover;
     background-position: center;
     transition: 0.5s;
+    object-fit: cover;
     
     &:hover{
         transform: scale(1.2);

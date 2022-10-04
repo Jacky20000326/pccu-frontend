@@ -99,13 +99,14 @@ const Announcement_tag = styled.button`
 `
 const Announcement_img = styled.img`
     margin: 2em 0px 5em 0px;
-    height: auto;
-    width: 80%;
-    border: 1px solid #000;
+    height: 350px;
+    width: 100%;
+   
+    object-fit: contain;
 
 `
 const Announcement_content = styled.div`
     font-size: 14px;
-    max-width: 90%;
+    max-width: 100%;
 `
 export default All_announcement
