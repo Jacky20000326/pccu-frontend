@@ -52,7 +52,7 @@ const All_announcement = () => {
                             </Announcement_post_container>
 
                             <Announcement_img src={`http://140.137.51.13:5000/${announcementData[0].A_img}`} />
-                            < Announcement_content >
+                            <Announcement_content >
                                 <div dangerouslySetInnerHTML={{ __html: announcementData[0].A_content }}></div>
 
                             </Announcement_content>

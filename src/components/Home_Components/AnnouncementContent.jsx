@@ -120,7 +120,8 @@ const AnnouncementImage = styled.img`
 	width: 40%;
 	min-width: 160px;
 	border-radius: 20px;
-	height: 70%;
+	height: 160px;
+    object-fit: cover;
 	
 	@media (max-width: ${({ theme }) => theme.w_900.w}) {
 		min-width: 150px;
