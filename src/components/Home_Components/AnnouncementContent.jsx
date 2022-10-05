@@ -4,13 +4,11 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 const AnnouncementContent = React.memo(({ item }) => {
-
+	// ˋ為React 16.6.0 新增的方法，主要是為了提升效能優化
 	return (
-
 		<motion.div initial={{ opacity: 0, top: "-50%", y: 20 }} animate={{ opacity: 1, y: 0, }} exit={{ opacity: 1, scale: .8, y: 0 }} transition={{ duration: 0.3 }}>
 			<Link to={`/announcement/detail/${item.A_id}`}>
 				<div style={{ display: "flex" }} key={item.id}>
-
 
 					<AnnouncementStyled>
 						<Title>{item.A_title}</Title>
@@ -23,7 +21,7 @@ const AnnouncementContent = React.memo(({ item }) => {
 					</AnnouncementStyled>
 					<AnnouncementImageContainer>
 
-						<AnnouncementImage  src={`http://140.137.51.13:5000/${item.A_img}`} ></AnnouncementImage>
+						<AnnouncementImage src={`http://140.137.51.13:5000/${item.A_img}`} ></AnnouncementImage>
 					</AnnouncementImageContainer>
 
 				</div>
