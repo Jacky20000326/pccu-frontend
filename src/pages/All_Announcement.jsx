@@ -79,7 +79,7 @@ const All_Announcement = () => {
 						})
 					}
 					{
-						Loading ? null : showLoading && <LoadingMore onClick={() => { LoadingGetMoreData() }}>載入更多</LoadingMore>
+						Loading ? null : showLoading || <LoadingMore onClick={() => { LoadingGetMoreData() }}>載入更多</LoadingMore>
 					}
 
 				</div>
