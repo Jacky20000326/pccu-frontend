@@ -10,7 +10,7 @@ const Announcement_Category = () => {
     let [data, setData] = useState(null)
     const getOtherAnnoucement = async () => {
         let result = await axios.get("http://140.137.51.13:3003/api/UploadAnnouncement/get/PerAnnouncement", { category: category }).then(res => res.data)
-        setData(result.data.slice(0, 5))
+        setData(result.data.slice(0, 4))
 
     }
     useEffect(() => {
@@ -27,11 +27,11 @@ const Announcement_Category = () => {
                         <Link to={`/announcement/detail/${item.A_id}`}>
                             <Announcement_other_Category_container>
                                 <Announcement_Category_image src={`http://140.137.51.13:5000/${item.A_img}`}></Announcement_Category_image>
-                                <div style={{display: 'flex',flexDirection: 'column',justifyContent: 'space-evenly'}}>
+                                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
                                     <Announcement_Category_title>{item.A_smellTitle}</Announcement_Category_title>
                                     <Announcement_Category_time>{moment(item.A_createTime).format('YYYY-MM-DD')}</Announcement_Category_time>
                                 </div>
-                               
+
                             </Announcement_other_Category_container>
                         </Link>
 
