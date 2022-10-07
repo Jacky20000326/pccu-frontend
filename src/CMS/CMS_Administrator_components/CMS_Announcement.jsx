@@ -161,6 +161,7 @@ const CMS_Announcement = () => {
                     <option>獎助學金</option>
                     <option>競賽/實習</option>
                     <option>講座與參訪</option>
+
                 </select>
             </div>
             <CMS_Announcement_Title_Container>
@@ -180,6 +181,7 @@ const CMS_Announcement = () => {
                         <input className="file-input" type="file" name="resume" onChange={(e) => {
                             let file = e.target.files[0]
                             setImageData(item => item = file)
+
                             setImageDataName(item => item = file.name)
                         }} />
                         <span className="file-cta">
