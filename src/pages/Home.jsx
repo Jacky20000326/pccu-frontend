@@ -31,6 +31,9 @@ const SeparateImg = styled.div`
 				height: 35vh;
 				width: 100vw;
 				margin-top: 100px;
+				@media (max-width: ${({ theme }) => theme.w_576.w}) {
+					background-attachment: unset;
+				}
 				`
 
 
