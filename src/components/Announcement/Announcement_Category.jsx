@@ -12,7 +12,7 @@ const Announcement_Category = () => {
         let result = await axios.get("http://140.137.51.13:3003/api/UploadAnnouncement/get/PerAnnouncement", { category: category }).then(res => res.data)
         let sortResult = await result.data.sort((a, b) => b.A_id - a.A_id)
         console.log(sortResult)
-        setData(sortResult.slice(0, 5))
+        setData(sortResult.slice(0, 4))
     }
     useEffect(() => {
         getOtherAnnoucement()
