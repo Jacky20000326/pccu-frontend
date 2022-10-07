@@ -1,19 +1,21 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Announcement from "../components/Home_Components/Announcement";
 import Folio from "../components/Home_Components/Folio";
 import Carousel from "../components/Home_Components/Carousel"
 import Video from "../components/Home_Components/Video";
 import axios from 'axios'
-
+import SeparateImgSrc from '../assets/SeparateImg.jpeg'
 const Home = () => {
-	
+
+
+
 	return (
 		< >
-		
+
 			<Carousel ></Carousel>
 			<Announcement></Announcement>
-			<SeparateImg />
+			<SeparateImg imgSrc={SeparateImgSrc} />
 			<Video></Video>
 			<Folio />
 		</>
@@ -22,7 +24,7 @@ const Home = () => {
 
 
 const SeparateImg = styled.div`
-				background-image: url("https://scontent.ftpe8-3.fna.fbcdn.net/v/t1.6435-9/73322119_2781121428588037_4938034023172669440_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=gJOrsTrVSFAAX87H3JT&_nc_ht=scontent.ftpe8-3.fna&oh=00_AT8bZWCTXCw3ObYkfsdQMDeY9oRs4urbB4qx7wEBwR5g_Q&oe=6342BF6A");
+				background-image: url(${props => props.imgSrc});
 				background-size: cover;
 				background-attachment: fixed;
 				background-position: center center;

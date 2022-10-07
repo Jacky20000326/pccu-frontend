@@ -7,10 +7,12 @@ import { GET_CATEGORY_RESULT, getAllAnnouncement, GET_CATEGORY_USER_RESULT } fro
 import LoadingComponent from "../components/Global_Components/Loading"
 
 
+
 // 取得search result
 
 
 const All_Announcement = () => {
+
 	const dispatch = useDispatch()
 	let Search_Result = useSelector(item => item.AnnouncementReducer.value.Search_Result)
 	let getCategory = useSelector(item => item.AnnouncementReducer.value.category)
@@ -19,35 +21,56 @@ const All_Announcement = () => {
 	// get user search input (當使用者輸入時觸發useEffect中的action)
 	let Get_Input_Value = useSelector(item => item.AnnouncementReducer.value.UserSearchInput)
 	// loading Number
-	let [loadimgNumber, setLoadimgNumber] = useState(1)
+	let [loadingNumber, setLoadingNumber] = useState(1)
+
 	let [showLoading, setShowLoading] = useState(true)
+
+	// 判斷是否該出現 '載入更多'
+	const determineLoadingMore = () => {
+
+		// 問題：會取的上一個結果
+
+		// if (Search_Result.length - loadingNumber * 5 > 0) {
+		// 	setShowLoading(true)
+		// 	console.log('還有公告')
+		// } else {
+		// 	setShowLoading(false)
+		// 	console.log(Search_Result.length - loadingNumber * 5)
+		// 	console.log('沒有公告了！！')
+		// }
+		console.log('Search_Result')
+	}
 
 
 	const getAnnouncementResult = async () => {
 		await dispatch(getAllAnnouncement())
 		await dispatch(GET_CATEGORY_RESULT())
+		await determineLoadingMore()
 
 	}
 
-	const LoadingGetMoreData = () => {
-		setLoadimgNumber(item => item + 1)
-		if (Search_Result.length - loadimgNumber * 5 < 5) {
-			setShowLoading(false)
-		} else {
-			setShowLoading(true)
-		}
+	// 載入更多公告
+	const getMoreAnnouncement = () => {
+		setLoadingNumber(item => item + 1)
 	}
 
-	const resetLoading = () => {
-		setShowLoading(true)
-		setLoadimgNumber(1)
-	}
+
+
+	// const resetLoading = () => {
+	// 	setShowLoading(true)
+	// 	setLoadimgNumber(1)
+	// }
 
 	useEffect(() => {
 
 		dispatch(GET_CATEGORY_RESULT())
 		dispatch(GET_CATEGORY_USER_RESULT())
-		resetLoading()
+
+
+
+
+		// resetLoading()
+
 
 
 	}, [getCategory, Get_Input_Value])
@@ -55,6 +78,9 @@ const All_Announcement = () => {
 	useEffect(() => {
 
 		getAnnouncementResult()
+
+
+
 
 		window.scrollTo(0, 0)
 	}, [])
@@ -68,7 +94,7 @@ const All_Announcement = () => {
 				<div style={{ marginTop: " 56px", flex: 7 }}>
 
 					{
-						Loading ? <LoadingComponent /> : Search_Result.length == 0 ? "當前無資料" : Search_Result.slice(0, loadimgNumber * 5).map(item => {
+						Loading ? <LoadingComponent /> : Search_Result.length == 0 ? "當前無資料" : Search_Result.slice(0, loadingNumber * 5).map(item => {
 							return (
 								<>
 									<AnnouncementContent item={item} />
@@ -79,7 +105,9 @@ const All_Announcement = () => {
 						})
 					}
 					{
-						Loading ? null : showLoading || <LoadingMore onClick={() => { LoadingGetMoreData() }}>載入更多</LoadingMore>
+						Search_Result.length - loadingNumber * 5 > 0 && <LoadingMore onClick={() => { getMoreAnnouncement() }}>載入更多</LoadingMore>
+
+
 					}
 
 				</div>
