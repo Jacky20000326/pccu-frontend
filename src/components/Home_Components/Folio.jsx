@@ -12,6 +12,8 @@ const Folio = () => {
     let TopicData = useSelector(item => item.UploadTopicReducer.topicData)
     let Loaging = useSelector(item => item.UploadTopicReducer.loaging)
 
+    console.log(TopicData)
+
 
 
 
@@ -38,6 +40,7 @@ const Folio = () => {
     useEffect(() => {
         dispatch(GetTopic())
 
+
     }, [])
     return (
         <All_Topics_Container >
@@ -47,36 +50,22 @@ const Folio = () => {
                 TopicData.length == 6 ?
                     <Folio_Container>
                         <Folio_Container_row>
-                            <div onClick={() => { GetCurrentTopic(TopicData[0]) }} style={img_big_container_style}>
-                                {Loaging ? <>Loading</> : <Folio_image_big src={`http://140.137.51.13:5000/${TopicData[0].TP_img}`}  />}
+                            {
+                                TopicData.map(item => (
 
-                            </div>
-                            <Folio_Container_child_row>
-                                <div onClick={() => { GetCurrentTopic(TopicData[1]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : TopicData[1] ? <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[1].TP_img}`} /> : <></>}
+                                    <Folio_cube onClick={() => { GetCurrentTopic(TopicData[item.TP_id - 1]) }}>
+                                        <Folio_Container_image src={`http://140.137.51.13:5000/${item.TP_img}`} />
+                                        <Folio_mask id='mask'>
+                                            <Folio_mask_title>{item.TP_title}</Folio_mask_title>
+                                            <Folio_mask_content>{item.TP_content}</Folio_mask_content>
+                                        </Folio_mask>
+                                    </Folio_cube>
 
-                                </div>
-                                <div onClick={() => { GetCurrentTopic(TopicData[2]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[2].TP_img}`} />}
 
-                                </div>
-                            </Folio_Container_child_row>
-                        </Folio_Container_row>
-                        <Folio_Container_row>
-                            <Folio_Container_child_row>
-                                <div onClick={() => { GetCurrentTopic(TopicData[3]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[3].TP_img}`} />}
 
-                                </div>
-                                <div onClick={() => { GetCurrentTopic(TopicData[4]) }} style={img_small_container_style}>
-                                    {Loaging ? <>Loading</> : <Folio_image_small  src={`http://140.137.51.13:5000/${TopicData[4].TP_img}`} />}
 
-                                </div>
-                            </Folio_Container_child_row>
-                            <div onClick={() => { GetCurrentTopic(TopicData[5]) }} style={img_big_container_style}>
-                                {Loaging ? <>Loading</> : <Folio_image_big  src={`http://140.137.51.13:5000/${TopicData[5].TP_img}`} />}
-
-                            </div>
+                                ))
+                            }
                         </Folio_Container_row>
                     </Folio_Container> : <div style={{ color: "#f8b6b5", fontSize: "30px", border: "2px solid #f8b6b5", padding: "10px 20px 10px 20px" }}>即將公告</div>
             }
@@ -111,6 +100,7 @@ const Folio_txt = styled.h3`
         font-size: 45px;
         @media (max-width: ${(prop) => prop.theme.w_576.w}) {
             font-size: 20px;
+            
 
 	}
         `
@@ -118,55 +108,96 @@ const Folio_txt = styled.h3`
 //     width:  1em;
 // `
 const Folio_Container = styled.div`
-
-    width: 750px;
-    height: 520px;
+    max-width: 800px;
+    min-width: 720px;
     display: flex;
-    overflow: hidden;
-    box-shadow: -1px 2px 16px -4px rgba(0,0,0,0.65);
-    
+    @media (max-width: ${({ theme }) => theme.w_900.w}) {
+        min-width: 600px;
+    }
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        width: 100%;
-        height: 100%;
-	}
-	
+        min-width: 300px;
+    }
+
+
 `
 const Folio_Container_row = styled.div`
+    width: 100%;
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
     
 `
 
 
-
-const Folio_Container_child_row = styled.div`
-    height: 50%;
-    display: flex;
+const Folio_cube = styled.div`
+    overflow: hidden;
+    position: relative;
+    
+    &:hover  #mask{
+        opacity: 1;
+        transition: 0.5s;
+    }
 `
-const Folio_image_big = styled.img`
-    width: 100%;
-    height: 100%;
+
+const Folio_Container_image = styled.img`
+    width: 240px;
+    height: 240px;
     background-size: cover;
     background-position: center;
     transition: 0.5s;
     object-fit: cover;
     
-    &:hover{
+    &:hover {
         transform: scale(1.2);
+        cursor: pointer;
+       
     }
+    @media (max-width: ${({ theme }) => theme.w_900.w}) {
+        width: 200px;
+        height: 200px;
+    }
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        width: 100px;
+        height: 100px;
+    }
+   
+
 `
-const Folio_image_small = styled.img`
+// mask
+const Folio_mask = styled.div`
     width: 100%;
     height: 100%;
-    transition: 0.5s;
-
-    &:hover{
-        transform: scale(1.2);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.7);
+    top: 0px;
+    pointer-events: none;
+    padding: 0px 20px;
+    opacity: 0;
+    z-index: 100;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        display: none;
     }
+    
+    
+ 
 `
-
-
+const Folio_mask_title = styled.div`
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+`
+const Folio_mask_content = styled.div`
+    color: #fff;
+    font-size: 1rem;
+    text-align: justify;
+`
 
 
 export default Folio;
