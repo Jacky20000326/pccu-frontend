@@ -35,25 +35,27 @@ const Boss = () => {
             <Teacher_master_container>
                 {
                     getBossData ? getBossData.map(item => (
-                        <Teacher_container>
+                        <Link to={`/department/teacher/${item.TR_name}`} >
+                            <Teacher_container>
 
-                            <Teacher_master_image_container>
-                               
-                              
-                                <Teacher_image src={`http://140.137.51.13:5000/${item.TR_image}`} />
-                            </Teacher_master_image_container>
-                            <Teacher_master_block_container>
-                                <Teacher_name>{item.TR_name}</Teacher_name>
-                                <Teacher_job_title>系主任/教授</Teacher_job_title>
-                                <Teacher_school>{item.TR_academic}</Teacher_school>
-                                <Teacher_specialized>{item.TR_research}
-                                </Teacher_specialized>
-                                <Link to={`/department/teacher/${item.TR_name}`} >
+                                <Teacher_master_image_container>
+
+
+                                    <Teacher_image src={`http://140.137.51.13:5000/${item.TR_image}`} />
+                                </Teacher_master_image_container>
+                                <Teacher_master_block_container>
+                                    <Teacher_name>{item.TR_name}</Teacher_name>
+                                    <Teacher_job_title>系主任/教授</Teacher_job_title>
+                                    <Teacher_school>{item.TR_academic}</Teacher_school>
+                                    <Teacher_specialized>{item.TR_research}
+                                    </Teacher_specialized>
+
                                     <Teacher_more_info>more</Teacher_more_info>
-                                </Link>
-                            </Teacher_master_block_container>
 
-                        </Teacher_container>
+                                </Teacher_master_block_container>
+
+                            </Teacher_container>
+                        </Link>
                     )) : <></>
                 }
 
@@ -84,7 +86,6 @@ const Teacher_master_container = styled.div`
     /* margin-left: 15px; */
     @media (max-width: ${({ theme }) => theme.w_900.w}) {
         flex-directon: column;
-
 	}
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
 
@@ -124,6 +125,8 @@ const Teacher_master_block_container = styled.div`
 const Teacher_name = styled.div`
     font-weight: 600;
     font-size: 1.5em;
+    color: #888888;
+   
     @media (max-width: ${({ theme }) => theme.w_900.w}) {
         position: absolute;
         top: -50px;
@@ -142,11 +145,13 @@ const Teacher_job_title = styled.div`
     font-size: 1em;
     font-weight: 500;
     margin-top: 10px;
+    color: #4a4a4a;
 `
 const Teacher_school = styled.div`
     margin-top: 10px;
     font-weight: 300;
     font-size: 0.8rem;
+    color: #4a4a4a;
    
 `
 const Teacher_specialized = styled.div`

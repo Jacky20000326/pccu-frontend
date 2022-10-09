@@ -28,21 +28,23 @@ const Assistant = () => {
                 {
                     getAssistantData ? getAssistantData.map(data => {
                         return (
-                            <Teacher_master_container>
-                                <Teacher_master_image_container>
-                                    <Teacher_image src={`http://140.137.51.13:5000/${data.TR_image}`} />
-                                    <Teacher_name>{data.TR_name}</Teacher_name>
-                                </Teacher_master_image_container>
-                                <Teacher_master_block_container>
+                            <Link to={`/department/teacher/${data.TR_name}`} >
+                                <Teacher_master_container>
+                                    <Teacher_master_image_container>
+                                        <Teacher_image src={`http://140.137.51.13:5000/${data.TR_image}`} />
+                                        <Teacher_name>{data.TR_name}</Teacher_name>
+                                    </Teacher_master_image_container>
+                                    <Teacher_master_block_container>
 
-                                    <Teacher_job_title>副教授</Teacher_job_title>
-                                    <Teacher_school>{data.TR_academic}</Teacher_school>
-                                    <Teacher_specialized>{data.TR_research}</Teacher_specialized>
-                                    <Link to={`/department/teacher/${data.TR_name}`} >
+                                        <Teacher_job_title>副教授</Teacher_job_title>
+                                        <Teacher_school>{data.TR_academic}</Teacher_school>
+                                        <Teacher_specialized>{data.TR_research}</Teacher_specialized>
+
                                         <Teacher_more_info>more</Teacher_more_info>
-                                    </Link>
-                                </Teacher_master_block_container>
-                            </Teacher_master_container>)
+
+                                    </Teacher_master_block_container>
+                                </Teacher_master_container>
+                            </Link>)
                     }) : <></>
                 }
 
@@ -111,11 +113,19 @@ const Teacher_job_title = styled.div`
     font-size: 0.4em;
     font-weight: 500;
     margin-top: 10px;
+    color: #4a4a4a;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        font-size: 1rem;
+	}
 `
 const Teacher_school = styled.div`
     margin-top: 10px;
     font-weight: 300;
     font-size:0.4em;
+    color: #4a4a4a;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        font-size: 0.8rem;
+	}
    
 `
 const Teacher_specialized = styled.div`
@@ -123,6 +133,9 @@ const Teacher_specialized = styled.div`
     font-weight: 500;
     font-size: 0.4em;
     color: #F69393;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        font-size: 0.8rem;
+	}
 `
 const Teacher_professor_container = styled.div`
 `
@@ -138,7 +151,8 @@ const Teacher_more_info = styled.div`
     bottom: 10px;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
         right: 10px;
-    bottom: 15px;
+        bottom: 15px;
+        font-size: 0.8rem;
 
 	}
 `
