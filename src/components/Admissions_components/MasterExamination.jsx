@@ -12,8 +12,7 @@ const MasterExamination = () => {
                 應繳資料：○大學部歷年學業成績單(含排名)正本1份○自傳○讀書計畫<br />
                 報名網址：<Link href="https://is.gd/YvK7SI" target="_blank">
                     https://is.gd/YvK7SI</Link><br />
-                連結：<Link href="https://is.gd/YvK7SI" target="_blank">
-                    https://is.gd/YvK7SI</Link><br />
+
                 申請提前入學：於111年2月前可取得學士學位，得申請提前入學。欲申請者請填寫並於期限內將申請表寄回本校招生組。
 
             </Context>
