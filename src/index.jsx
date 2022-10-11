@@ -23,6 +23,10 @@ const Theme = {
 	w_576: {
 		w: "576px",
 		padding: "0px 10px 0px 10px"
+	},
+	w_400: {
+		w: "400px",
+		padding: "0px 10px 0px 10px"
 	}
 
 }

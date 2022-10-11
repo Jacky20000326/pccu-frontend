@@ -66,13 +66,16 @@ const Features = () => {
 }
 
 const Feature_png_1 = styled.img`
-    width: 60vw;
+    width: 40vw;
     height: auto;
-    margin-left: 50%;
+    margin: 0px 50%;
     transform: translateX(-50%);
     @media (max-width: ${({ theme }) => theme.w_900.w}) {
-        width: 80vw;
-	}
+        /* width: 80vw; */
+        width: auto;
+        margin: 0px;
+        transform: translateX(0%);
+	} 
 `
 const Title = styled.h4`
     font-size: 18px;
@@ -85,6 +88,10 @@ const Context = styled.p`
     font-weight: 400;
     line-height: 25px;
     margin-left: 20px;
+    text-align: justify;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        margin-left: 0px;
+	}
 `
 
 export default Features

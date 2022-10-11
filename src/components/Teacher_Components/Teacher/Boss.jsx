@@ -42,9 +42,10 @@ const Boss = () => {
 
 
                                     <Teacher_image src={`http://140.137.51.13:5000/${item.TR_image}`} />
+                                    <Teacher_name>{item.TR_name}</Teacher_name>
                                 </Teacher_master_image_container>
                                 <Teacher_master_block_container>
-                                    <Teacher_name>{item.TR_name}</Teacher_name>
+
                                     <Teacher_job_title>系主任/教授</Teacher_job_title>
                                     <Teacher_school>{item.TR_academic}</Teacher_school>
                                     <Teacher_specialized>{item.TR_research}
@@ -94,50 +95,59 @@ const Teacher_master_container = styled.div`
 `
 const Teacher_container = styled.div`
     display: flex;
-   
     box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.1);
     /* width: 180px; */
     margin: 0px 0px 25px 15px;
+    width: 220px;
+
+    flex-direction: column;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        width: 44%;
-        flex-direction: column;
-        margin: 0px 0px 25px 0px;
+        width: 185px;
+        margin: 0px 5px 25px 5px;
 	}
+    @media (max-width: ${({ theme }) => theme.w_400.w}) {
+        width: 165px;
+        margin: 0px 5px 25px 5px;
+	}
+
+
 
 `
 
 const Teacher_master_image_container = styled.div`
-    flex: 1.5;
-    height: auto;
-    min-height: 180px;
+  /* flex: 1.5; */
+    width: 100%;
+    position: relative;
+    /* min-height: 300px; */
+    background-color: #f4dada;
+    height: 240px;
 `
 const Teacher_image = styled.img`
     width: 100%;
     height: 100%;
+    object-fit: cover;
 `
 const Teacher_master_block_container = styled.div`
     flex: 5;
     padding: 20px 30px 20px 30px;
-    @media (max-width: ${({ theme }) => theme.w_900.w}) {
-        position: relative;
-	}
+    position: relative;
+    
 `
 const Teacher_name = styled.div`
-    font-weight: 600;
+    /* font-weight: 600;
     font-size: 1.5em;
     color: #888888;
    
-    @media (max-width: ${({ theme }) => theme.w_900.w}) {
+    @media (max-width: ${({ theme }) => theme.w_900.w}) { */
         position: absolute;
-        top: -50px;
-        left: 0px;
+        bottom: 20px;
         font-size: 1rem;
         background-color: #F69393;
         opacity: 0.9;
         padding: 5px 10px 5px 10px;
         font-weight: 500;
         color: #fff;
-	}
+	/* } */
     
     
 `
@@ -155,31 +165,33 @@ const Teacher_school = styled.div`
    
 `
 const Teacher_specialized = styled.div`
-    margin-top: 15px;
+   margin-top: 15px;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.4em;
     color: #F69393;
+    height: 70px;
+
+    margin-bottom: 20px;
+    overflow: hidden;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        font-size: 0.8rem;
+	}
 `
 const Teacher_professor_container = styled.div`
 `
 
-const Teacher_more_info = styled.button`
-    border:none;
-    width: 50px;
-    height: 25px;
-    border-radius: 5px;
-    margin-top: 1.3em;
-    font-size: 12px;
-    background-color: #F69393;
-    color: #fff;
-    @media (max-width: ${({ theme }) => theme.w_900.w}) {
-        flex-direction: column;
-        width: 30%;
-        background-color: #fff;
-        color: #666666;
-        font-weight: 600;
-        display: flex;
-       
+const Teacher_more_info = styled.div`
+    font-size: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #888888;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        right: 10px;
+        bottom: 15px;
+        font-size: 0.8rem;
 
 	}
   

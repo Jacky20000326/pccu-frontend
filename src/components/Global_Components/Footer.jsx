@@ -29,9 +29,9 @@ const Footer = () => {
                 <Footer_contact_txt>粉絲專頁連結</Footer_contact_txt>
                 <Footer_link_container>
                     <Footer_description>資傳系粉絲專頁連結</Footer_description>
-                    <Footer_link href="https://reurl.cc/g0Qx1z">https://reurl.cc/g0Qx1z</Footer_link>
+                    <Footer_link href="https://reurl.cc/g0Qx1z" target="_blank">https://reurl.cc/g0Qx1z</Footer_link>
                     <Footer_description>資傳系系學會粉絲專頁連結</Footer_description>
-                    <Footer_link href="https://reurl.cc/g0Qx1z">https://www.facebook.com/pccudic/</Footer_link>
+                    <Footer_link href="https://www.facebook.com/pccudic/" target="_blank">https://www.facebook.com/pccudic/</Footer_link>
                 </Footer_link_container>
             </Footer_Container_row>
 
