@@ -89,8 +89,7 @@ const Teacher_master_container = styled.div`
         flex-directon: column;
 	}
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-
-        margin-left: 15px;
+        
 	}
 `
 const Teacher_container = styled.div`
