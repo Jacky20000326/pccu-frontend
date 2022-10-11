@@ -58,6 +58,11 @@ const Teacher_container = styled.div`
     display: flex;
     /* justify-content: space-between; */
     flex-wrap: wrap;
+    @media (max-width: ${({ theme }) => theme.w_576.w}) {
+        justify-content: space-between;
+        
+
+	}
 
 `
 const Teacher_title = styled.div`
@@ -69,30 +74,36 @@ const Teacher_master_container = styled.div`
     display: flex;
     flex-direction: column;
     box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.1);
-    width: 180px;
+    width: 220px;
     margin: 0px 0px 25px 15px;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        width: 44%;
-
+        width: 185px;
+        margin: 0px 5px 25px 5px;
+	}
+    @media (max-width: ${({ theme }) => theme.w_400.w}) {
+        width: 165px;
+        margin: 0px 5px 25px 5px;
 	}
 `
 const Teacher_master_image_container = styled.div`
-    flex: 1.5;
+    /* flex: 1.5; */
+    width: 100%;
     position: relative;
-    height: auto;
-
-    min-height: 55%;
+    /* min-height: 300px; */
+    background-color: #f4dada;
+    height: 240px;
+   
 `
 const Teacher_image = styled.img`
     width: 100%;
     height: 100%;
-    min-height: 180px;
+    object-fit: cover;
 `
 const Teacher_master_block_container = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    flex: 5;
+    /* flex: 5; */
     padding: 20px;
 
   
@@ -133,6 +144,10 @@ const Teacher_specialized = styled.div`
     font-weight: 500;
     font-size: 0.4em;
     color: #F69393;
+    height: 70px;
+
+    margin-bottom: 20px;
+    overflow: hidden;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
         font-size: 0.8rem;
 	}

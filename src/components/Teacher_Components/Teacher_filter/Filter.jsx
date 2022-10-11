@@ -43,9 +43,9 @@ const Filter = () => {
                 <select ref={handleResearchSelect} style={{ width: "200px" }} onChange={(e) => { filterJobResearch(e.target.value) }}>
                     <option>請選擇</option>
                     <option>全部</option>
-                    <option>大眾傳播學</option>
+                    {/* <option>大眾傳播學</option>
                     <option>打小孩</option>
-                    <option>看劇</option>
+                    <option>看劇</option> */}
                 </select>
             </div>
         </Teacher_Filter_Container>
