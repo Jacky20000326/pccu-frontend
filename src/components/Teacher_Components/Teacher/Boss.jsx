@@ -169,7 +169,6 @@ const Teacher_specialized = styled.div`
     font-size: 0.4em;
     color: #F69393;
     height: 70px;
-
     margin-bottom: 20px;
     overflow: hidden;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
