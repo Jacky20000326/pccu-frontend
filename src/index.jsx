@@ -17,7 +17,7 @@ import { Provider } from "react-redux";
 const Theme = {
 	w_900: {
 		w: "900px",
-		padding: "0px 50px 0px 50px",
+		padding: "0px 10px 0px 10px",
 		title_fs: "28px"
 	},
 	w_576: {

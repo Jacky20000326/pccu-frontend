@@ -20,7 +20,7 @@ const Footer = () => {
                     <Footer_link>中國文化大學資訊傳播學系
                         11114台北市士林區華岡路55號大義館218室</Footer_link>
                     <Footer_link>02-2861-0511#37405~37406</Footer_link>
-                    <Footer_link>crjuic@dep.pccu.edu.tw</Footer_link>
+                    <Footer_link href="mailto:crjuic@dep.pccu.edu.tw">crjuic@dep.pccu.edu.tw</Footer_link>
                 </Footer_link_container>
 
 

@@ -28,8 +28,7 @@ const MasterExamination = () => {
 
                 報名網址：<Link href="https://is.gd/YvK7SI" target="_blank">
                     https://is.gd/YvK7SI</Link><br />
-                連結：<Link href="https://is.gd/YvK7SI" target="_blank">
-                    https://is.gd/YvK7SI</Link><br />
+
 
 
             </Context>
