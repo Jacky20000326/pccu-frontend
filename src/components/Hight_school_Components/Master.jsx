@@ -63,6 +63,9 @@ const Master = () => {
             <Context>
                 提報研撰計畫後，完成論文，並進行論文口試。本系亦可採取創作報告或技術報告方式替代學術論文，但必須進行展演發表。
                 <br />
+                取得流程圖 : <Link href="https://files.pccu.edu.tw:5001/fsdownload/TDuGb62AM/110%E7%A2%A9%E5%A3%AB%E7%8F%AD%E9%81%B8%E8%AA%B2%E8%88%87%E6%8A%B5%E5%85%8D%E8%AA%AA%E6%98%8E" target="_blank">
+                    連結</Link>
+
 
             </Context>
 
