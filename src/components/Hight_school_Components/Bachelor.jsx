@@ -105,6 +105,17 @@ const Bachelor = () => {
                 包含：超過18的學群學分、另一個學群學分、不是學群的選修、有學分的軍訓、外系必修與選修(有先修科目需配合)、多餘的共同科目(通識、外文領域日韓法德文、電腦、教務處)
                 <br />
                 &emsp;&emsp;備註：不一定要修外系學分
+                <br />
+                <br />
+                5. 選課說明
+                <br />
+                <br />
+
+                &emsp;&emsp; i.本學年第1學期選課說明下載: <Link href="https://files.pccu.edu.tw:5001/sharing/70H85nVJI" target="_blank">https://files.pccu.edu.tw:5001/sharing/70H85nVJI </Link><br />
+
+                &emsp;&emsp; ii. 本學年第2學期選課說明下載: <Link href="https://files.pccu.edu.tw:5001/sharing/yHR7rndo2" target="_blank">https://files.pccu.edu.tw:5001/sharing/yHR7rndo2 </Link> <br />
+
+
 
 
             </Context>
