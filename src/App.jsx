@@ -23,9 +23,9 @@ import All_Announcement from "./pages/All_Announcement"
 import Topic from "./pages/Topic"
 import OpenResource from "./pages/OpenResource";
 import Resource from "./pages/Resource";
-import Master from "./components/Hight_school_Components/Master"
-import Bachelor from "./components/Hight_school_Components/Bachelor"
-import Form from "./components/Hight_school_Components/Form"
+import Master from "./components/Resource_Components/Master"
+import Bachelor from "./components/Resource_Components/Bachelor"
+import Form from "./components/Resource_Components/Form"
 import Teacher_info from "./components/Teacher_Components/Teacher/Teacher_info";
 // Admissions
 import Admissions from "./pages/Admissions";
