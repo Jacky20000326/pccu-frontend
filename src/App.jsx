@@ -3,9 +3,9 @@ import Department from "./pages/Department";
 import Index from "./pages/Index"
 import Home from "./pages/Home";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Introduce from "./components/Department_components/Introduce"
-import Features from "./components/Department_components/Features"
-import OpenInfo from "./components/Department_components/OpenInfo";
+import Introduce from "./components/Department_Components/Introduce"
+import Features from "./components/Department_Components/Features"
+import OpenInfo from "./components/Department_Components/OpenInfo";
 import Teacher from "./components/Teacher_Components/Teacher"
 import Course from "./pages/Course";
 import Resources_p1 from "./components/Course_Components/Resources_p1"
@@ -13,25 +13,25 @@ import Resources_p2 from "./components/Course_Components/Resources_p2"
 import Resources_p3 from "./components/Course_Components/Resources_p3"
 import Resources_p4 from "./components/Course_Components/Resources_p4"
 import Research from "./pages/Research"
-import Research_p1 from "./components/Research_components/Research_p1"
-import Research_p2 from "./components/Research_components/Research_p2"
-import Research_p3 from "./components/Research_components/Research_p3"
-import Research_p4 from "./components/Research_components/Research_p4"
-import Research_p5 from "./components/Research_components/Research_p5"
+import Research_p1 from "./components/Research_Components/Research_p1"
+import Research_p2 from "./components/Research_Components/Research_p2"
+import Research_p3 from "./components/Research_Components/Research_p3"
+import Research_p4 from "./components/Research_Components/Research_p4"
+import Research_p5 from "./components/Research_Components/Research_p5"
 import Per_Announcement from "./pages/Per_Announcement"
 import All_Announcement from "./pages/All_Announcement"
 import Topic from "./pages/Topic"
 import OpenResource from "./pages/OpenResource";
 import Resource from "./pages/Resource";
-import Master from "./components/Hight_school_Components/Master"
-import Bachelor from "./components/Hight_school_Components/Bachelor"
-import Form from "./components/Hight_school_Components/Form"
+import Master from "./components/Resource_Components/Master"
+import Bachelor from "./components/Resource_Components/Bachelor"
+import Form from "./components/Resource_Components/Form"
 import Teacher_info from "./components/Teacher_Components/Teacher/Teacher_info";
 // Admissions
 import Admissions from "./pages/Admissions";
-import HighSchool from "./components/Admissions_components/HighSchool";
-import Learn from "./components/Admissions_components/Learn";
-import MasterExamination from "./components/Admissions_components/MasterExamination";
+import HighSchool from "./components/Admissions_Components/HighSchool";
+import Learn from "./components/Admissions_Components/Learn";
+import MasterExamination from "./components/Admissions_Components/MasterExamination";
 
 
 // cms

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import SideNav from '../components/Topic_component/SideNav'
-import All_topics from '../components/Topic_component/All_topics'
+import SideNav from '../components/Topic_Component/SideNav'
+import All_topics from '../components/Topic_Component/All_topics'
 import { all_topic } from "../assets/Topic"
 
 const Topic = () => {
