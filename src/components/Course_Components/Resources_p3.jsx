@@ -6,11 +6,11 @@ const resources_p3 = () => {
     return (
         <Pdf_container>
             <Iframe_container>
-                <iframe style={pdfStyle} src={require("../../assets/110workbook.pdf")} frameborder="0"></iframe>
+                <iframe style={pdfStyle} src={require("../../assets/pdf/110workbook.pdf")} frameborder="0"></iframe>
             </Iframe_container>
             <Pdf_download_container>
 
-                <Pdf_download_link href={require("../../assets/110workbook.pdf")} download="專業課程學群分組手冊">檔案下載</Pdf_download_link>
+                <Pdf_download_link href={require("../../assets/pdf/110workbook.pdf")} download="專業課程學群分組手冊">檔案下載</Pdf_download_link>
                 <Pdf_download_icon />
             </Pdf_download_container>
 
