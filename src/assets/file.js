@@ -26,7 +26,7 @@ export const links = [
 			},
 			{
 				name: "評鑑公開資訊",
-				path: "openResounce",
+				path: "OpenResource",
 				state: false,
 				id: 3,
 			}
@@ -134,6 +134,7 @@ export const links = [
 			}
 		]
 	},
+	
 ];
 
 
