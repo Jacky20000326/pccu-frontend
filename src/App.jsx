@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Introduce from "./components/Department_Components/Introduce"
 import Features from "./components/Department_Components/Features"
-import OpenInfo from "./components/Department_Components/OpenInfo";
+import OpenResource from "./components/Department_Components/OpenResource";
 import Teacher from "./components/Teacher_Components/Teacher"
 import Course from "./pages/Course";
 import Resources_p1 from "./components/Course_Components/Resources_p1"
@@ -21,7 +21,7 @@ import Research_p5 from "./components/Research_Components/Research_p5"
 import Per_Announcement from "./pages/Per_Announcement"
 import All_Announcement from "./pages/All_Announcement"
 import Topic from "./pages/Topic"
-import OpenResource from "./pages/OpenResource";
+
 import Resource from "./pages/Resource";
 import Master from "./components/Resource_Components/Master"
 import Bachelor from "./components/Resource_Components/Bachelor"
@@ -77,7 +77,7 @@ const App = () => {
 					<Route path="/department" element={<Department />} exact >
 						<Route path="introduce" element={<Introduce />} exact />
 						<Route path="features" element={<Features />} exact />
-						<Route path="openResounce" element={<OpenInfo />} exact />
+						<Route path="OpenResource" element={<OpenResource />} exact />
 
 					</Route>
 
@@ -99,7 +99,6 @@ const App = () => {
 					<Route path="/announcement" element={<All_Announcement />} exact />
 					<Route path="/announcement/detail/:id" element={<Per_Announcement />} />
 					<Route path="/Topic" element={<Topic />} exact />
-					<Route path="/OpenResource" element={<OpenResource />} exact />
 					<Route path="/Resource" element={<Resource />} exact>
 						<Route path="bachelor" element={<Bachelor />} exact />
 						<Route path="master" element={<Master />} exact />

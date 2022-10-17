@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <Footer_Container>
             <Footer_Container_row style={flexStyle}>
-                <Logo src={require("../../assets/DicLogo.png")} />
+                <Logo src={require("../../assets/pccu_img/DicLogo.png")} />
 
             </Footer_Container_row >
             <Footer_Container_row>
@@ -37,7 +37,7 @@ const Footer = () => {
 
             <Footer_link_to_cms_container to="/cms/login">
                 <Footer_link_to_cms_txt>進入管理頁面</Footer_link_to_cms_txt>
-                <Footer_link_to_cms_image src={require("../../assets/cms_arrow.png")} />
+                <Footer_link_to_cms_image src={require("../../assets/pccu_img/cms_arrow.png")} />
             </Footer_link_to_cms_container>
         </Footer_Container>
     )

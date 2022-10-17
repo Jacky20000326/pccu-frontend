@@ -37,8 +37,6 @@ const Bachelor = () => {
                         補救計劃：參加校內會考，或選修「密集英文(一)、(二)」共4學分，不計入畢業學分。
                     </ListLi_3>
                 </List_ol>
-
-
             </Context>
             <br />
             <br />
@@ -181,7 +179,6 @@ const Context = styled.p`
     color: #777777;
     font-weight: 400;
     line-height: 25px;
-    margin-left: 3em;
 `
 const Link = styled.a`
     text-decoration: none;
@@ -189,7 +186,7 @@ const Link = styled.a`
     font-size: 0.8em;
 `
 const List_ol = styled.ol`
-    /* padding-left: 2em; */
+    padding-left: 2rem;
 `
 const List_li = styled.li`
     margin-bottom: 2em;

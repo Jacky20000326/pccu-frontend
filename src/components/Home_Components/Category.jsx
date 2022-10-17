@@ -19,7 +19,7 @@ const Category = () => {
 	return (
 		<Category_container>
 			<div style={flexStyle}>
-				<SearchPng src={require("../../assets/search.png")}></SearchPng>
+				<SearchPng src={require("../../assets/pccu_img/search.png")}></SearchPng>
 				<Separator></Separator>
 				<SearchInput onChange={Get_User_Value} placeholder="Search"></SearchInput>
 

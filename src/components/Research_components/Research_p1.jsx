@@ -6,10 +6,10 @@ const Research_p1 = () => {
     return (
         <Pdf_container>
             <Iframe_container>
-                <iframe style={pdfStyle} src={require("../../assets/Research_p1.pdf")} frameborder="0"></iframe>
+                <iframe style={pdfStyle} src={require("../../assets/pdf/Research_p1.pdf")} frameborder="0"></iframe>
             </Iframe_container>
             <Pdf_download_container>
-                <Pdf_download_link href={require("../../assets/Research_p1.pdf")} download="學生參與專題研究情形">檔案下載</Pdf_download_link>
+                <Pdf_download_link href={require("../../assets/pdf/Research_p1.pdf")} download="學生參與專題研究情形">檔案下載</Pdf_download_link>
                 <Pdf_download_icon />
             </Pdf_download_container>
         </Pdf_container>
