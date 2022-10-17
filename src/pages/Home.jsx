@@ -5,7 +5,7 @@ import Announcement from "../components/Home_Components/Announcement";
 import Folio from "../components/Home_Components/Folio";
 import Carousel from "../components/Home_Components/Carousel"
 import Video from "../components/Home_Components/Video";
-import SeparateImgSrc from '../assets/SeparateImg.jpeg'
+import SeparateImgSrc from '../assets/pccu_img/SeparateImg.jpeg'
 const Home = () => {
 
 	return (

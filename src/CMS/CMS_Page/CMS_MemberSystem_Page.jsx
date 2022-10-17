@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const CMS = () => {
     return (
         <CMS_container>
-            <Image src={require("../../assets/cmsImage.jpg")} />
+            <Image src={require("../../assets/pccu_img/cmsImage.jpg")} />
             <Outlet_container>
                 <Outlet />
             </Outlet_container>

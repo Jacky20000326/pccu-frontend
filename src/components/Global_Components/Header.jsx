@@ -60,7 +60,7 @@ const Nav = () => {
 	return (
 		<NavStyled>
 			<Link to="/">
-				<DicLogo src={require("../../assets/DicLogo.png")} alt=""></DicLogo>
+				<DicLogo src={require("../../assets/pccu_img/DicLogo.png")} alt=""></DicLogo>
 			</Link>
 			<Links>
 				{links.map((item) => {

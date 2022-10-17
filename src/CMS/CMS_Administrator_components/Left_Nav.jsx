@@ -19,7 +19,7 @@ const Left_Nav = () => {
 
     return (
         <Left_Nav_Container>
-            <Pccu_logo_img src={require("../../assets/cms_pccu_logo.png")}></Pccu_logo_img>
+            <Pccu_logo_img src={require("../../assets/pccu_img/cms_pccu_logo.png")}></Pccu_logo_img>
             <Nav_List_container>
                 <Link to="member"  >
                     <Option_List_Container onClick={() => { pass_current_cms("帳號管理") }} >
