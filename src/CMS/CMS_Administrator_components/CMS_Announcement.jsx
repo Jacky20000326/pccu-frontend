@@ -2,28 +2,36 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { AiOutlineSearch, AiOutlineVerticalAlignTop } from "react-icons/ai";
 import { postAnnouncement, updateAnnouncement } from "../../Store/AnnouncementSlice"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
+
 import '@wangeditor/editor/dist/css/style.css' // 引入 css
 // wangEdtiors
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 import MessageModel from '../../components/Global_Components/MessageModel'
 import axios from 'axios';
-
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import moment from 'moment'
+import '../../styles/reactCalenderStyle.css'
 const CMS_Announcement = () => {
 
     // get dispatch
-    const dispatch = useDispatch()
+    let dispatch = useDispatch()
 
     let [category, setCategory] = useState("")
     let [title, setTitle] = useState("")
-    const [editor, setEditor] = useState(null) // 存储 editor 实例
+    let [editor, setEditor] = useState(null) // 存储 editor 实例
     // MessageModel state
     let [exist, setExist] = useState("none")
-    const [html, setHtml] = useState('<p>hello</p>') // 编辑器内容
-    const [ImageData, setImageData] = useState(null) // 文章縮圖
-    const [ImageDataName, setImageDataName] = useState(null) // 文章縮圖名稱
-    const [smellTitle, setSmellTitle] = useState("")
-    const [SearchTitle, setSearchTitle] = useState("")
+    let [html, setHtml] = useState('<p>hello</p>') // 编辑器内容
+    let [ImageData, setImageData] = useState(null) // 文章縮圖
+    let [ImageDataName, setImageDataName] = useState(null) // 文章縮圖名稱
+    let [smellTitle, setSmellTitle] = useState("")
+    let [SearchTitle, setSearchTitle] = useState("")
+    // expire data setting
+    let [expire, setExpire] = useState(null)
+
+
 
 
     let ResMsg = useSelector(item => item.AnnouncementReducer.value.dbMsg.message)
@@ -48,13 +56,14 @@ const CMS_Announcement = () => {
             setHtml(result.A_content)
             setImageDataName("請重新上傳公告圖片！！")
             setSmellTitle(result.A_smellTitle)
+            setExpire(null)
         }
         return respond.result
     }
 
     // update announcement
     const updateAnnouncementFn = async () => {
-        if (category == "" || title == "" || html == "" || ImageData == null || smellTitle == "") {
+        if (category == "" || title == "" || html == "" || ImageData == null || smellTitle == "" || expire == null) {
             alert("請將資料填寫完整")
             return
         }
@@ -66,6 +75,8 @@ const CMS_Announcement = () => {
         data.append("upload", ImageData)
         data.append("poster", poster)
         data.append("smellTitle", smellTitle)
+        data.append("expire", expire)
+
 
         await dispatch(updateAnnouncement(data))
         await setExist(item => item = "block")
@@ -73,9 +84,11 @@ const CMS_Announcement = () => {
     }
 
 
+
+
     // post announcement
     const PostAnnouncementFn = async () => {
-        if (category == "" || title == "" || html == "" || ImageData == null || smellTitle == "") {
+        if (category == "" || title == "" || html == "" || ImageData == null || smellTitle == "" || expire == null) {
             alert("請將資料填寫完整")
             return
         }
@@ -87,6 +100,7 @@ const CMS_Announcement = () => {
         data.append("upload", ImageData)
         data.append("poster", poster)
         data.append("smellTitle", smellTitle)
+        data.append("expire", expire)
         await dispatch(postAnnouncement(data))
         await setExist(item => item = "block")
         resetInput()
@@ -121,6 +135,7 @@ const CMS_Announcement = () => {
         setImageData(null)
         setImageDataName(null)
         setSmellTitle("")
+        setExpire(null)
     }
     // 及时销毁 editor ，重要！
     useEffect(() => {
@@ -132,8 +147,7 @@ const CMS_Announcement = () => {
     }, [editor])
 
 
-
-
+    console.log(expire)
 
 
 
@@ -161,9 +175,9 @@ const CMS_Announcement = () => {
                     <option>獎助學金</option>
                     <option>競賽/實習</option>
                     <option>講座與參訪</option>
-
                 </select>
             </div>
+
             <CMS_Announcement_Title_Container>
                 <CMS_Announcement_Title_Txt>公告標題</CMS_Announcement_Title_Txt>
                 <input value={title} onChange={(e) => { setTitle(e.target.value) }} className="input" type="text" placeholder="限100字內"></input>
@@ -174,6 +188,7 @@ const CMS_Announcement = () => {
                 <input value={smellTitle} onChange={(e) => { setSmellTitle(e.target.value) }} className="input" type="text" placeholder="限100字內"></input>
 
             </CMS_Announcement_Small_Label_Container>
+
             <CMS_Announcement_Image_Container>
                 <CMS_Announcement_Image_Txt>上傳公告圖片</CMS_Announcement_Image_Txt>
                 <div className="file is-info has-name">
@@ -198,6 +213,20 @@ const CMS_Announcement = () => {
                     </label>
                 </div>
             </CMS_Announcement_Image_Container>
+            <CMS_Late_Announcement_Container>
+                <CMS_Late_Title>
+                    設定公告逾期日
+                </CMS_Late_Title>
+                <div class="notification">
+                    逾期日期為當日 00:00:00，例如：2022-10-22 00:00:00
+                </div>
+
+                <Calendar onChange={setExpire} value={expire} />
+
+
+
+
+            </CMS_Late_Announcement_Container>
             <CMS_Announcement_Description_Container>
                 <CMS_Announcement_Description_Txt>公告內文</CMS_Announcement_Description_Txt>
                 <Toolbar
@@ -216,6 +245,7 @@ const CMS_Announcement = () => {
                 />
 
             </CMS_Announcement_Description_Container>
+
             <CMS_Announcement_Button_Container>
                 <button style={{ marginRight: "20px" }} className="button is-primary" onClick={() => { PostAnnouncementFn() }}>上傳</button>
                 <button onClick={() => { updateAnnouncementFn() }} class="button is-warning">更新</button>
@@ -276,9 +306,15 @@ const CMS_Announcement_Button_Container = styled.div`
 `
 // search
 const CMS_Search_Announcement_Container = styled.div`
-position: absolute;
-right: 5%;
-top: 5%;
-display: flex;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    display: flex;
 `
+// late
+const CMS_Late_Announcement_Container = styled.div`
+
+`
+const CMS_Late_Title = styled(TxtStyle)``
+
 export default CMS_Announcement
