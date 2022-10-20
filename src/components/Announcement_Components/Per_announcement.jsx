@@ -45,8 +45,8 @@ const All_announcement = () => {
                         <>
                             <Announcement_title>{announcementData[0].A_title}</Announcement_title>
                             <Announcement_post_container>
-                                <Announcement_post_timer>{moment(announcementData[0].A_createTime).format('YYYY-MM-DD HH:mm:ss')}</Announcement_post_timer>
-                                <b style={{ margin: "0px 5px 0px 5px" }}>/</b>
+                                <Announcement_post_timer>更新日期：{moment(announcementData[0].A_createTime).format('YYYY-MM-DD HH:mm:ss')}</Announcement_post_timer>
+                                <b style={{ margin: "0px 5px 0px 5px" }}>｜</b>
                                 <Announcement_post_publisher>post by {announcementData[0].M_name}</Announcement_post_publisher>
                                 <Announcement_tag BtnWidth="80px">{announcementData[0].A_category}</Announcement_tag>
                             </Announcement_post_container>
@@ -89,7 +89,7 @@ const Announcement_post_publisher = styled.p``
 const Announcement_tag = styled.button`
     width: ${prop => prop.BtnWidth};
     border: none;
-	height: 24px;
+	height: 20px;
 	background-color: #F69393;
 	border-radius: 15.5px;
 	color: #FFFFFF;
