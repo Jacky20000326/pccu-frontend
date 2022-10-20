@@ -28,6 +28,7 @@ export const getAllAnnouncement = createAsyncThunk(
 	'Get/Announcement',
 	async () => {
 		let result = await axios.get('http://140.137.51.13:3003/api/UploadAnnouncement/get/PerAnnouncement').then(res => res.data)
+
 		return result
 	}
 )
@@ -126,8 +127,10 @@ const AnnouncementSlice = createSlice({
 		},
 		[getAllAnnouncement.fulfilled]: (state, { payload }) => {
 			state.Loading = false
-
-			state.value.AnnouncementArray = payload.data
+			// sort array
+			let sortCurrData = payload.data.sort((a,b)=> b.A_id - a.A_id)
+			console.log(sortCurrData)
+			state.value.AnnouncementArray = sortCurrData
 
 
 		},
