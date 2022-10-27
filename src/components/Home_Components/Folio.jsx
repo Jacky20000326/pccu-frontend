@@ -92,7 +92,7 @@ const Folio_txt = styled.h3`
         font-weight: 400;
         font-size: 45px;
         @media (max-width: ${(prop) => prop.theme.w_576.w}) {
-            font-size: 20px;
+            font-size: 25px;
             
 
 	}
@@ -153,8 +153,8 @@ const Folio_Container_image = styled.img`
         height: 200px;
     }
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
    
 
