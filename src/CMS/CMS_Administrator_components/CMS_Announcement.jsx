@@ -56,7 +56,7 @@ const CMS_Announcement = () => {
             setHtml(result.A_content)
             setImageDataName("請重新上傳公告圖片！！")
             setSmellTitle(result.A_smellTitle)
-            setExpire(null)
+            setExpire(new Date(result.expire))
         }
         return respond.result
     }

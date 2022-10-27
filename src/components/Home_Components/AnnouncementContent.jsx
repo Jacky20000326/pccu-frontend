@@ -16,7 +16,7 @@ const AnnouncementContent = React.memo(({ item }) => {
 						<Info>
 							<Time>{moment(item.A_createTime).format('YYYY-MM-DD')}</Time>
 							<Separator></Separator>
-							<Label>{item.A_category}</Label>
+							<Label bgColor={item.A_category !== '逾期' ? '#f69393' : '#6f6e6e'}>{item.A_category}</Label>
 						</Info>
 					</AnnouncementStyled>
 					<AnnouncementImageContainer>
@@ -83,7 +83,7 @@ const Time = styled.div`
 const Label = styled.div`
 	padding: 10px 15px 10px 15px;
 	height: 20px;
-	background-color: #f69393;
+	background-color: ${prop => prop.bgColor};
 	border-radius: 15.5px;
 	font-size: 0.5rem;
 	color: #fff;
@@ -120,7 +120,7 @@ const AnnouncementImage = styled.img`
 	border-radius: 20px;
 	height: 160px;
     object-fit: cover;
-	
+	box-shadow:  0px 2px 10px rgba(0,0,0,0.2);
 	@media (max-width: ${({ theme }) => theme.w_900.w}) {
 		min-width: 150px;
 		width: 70%;

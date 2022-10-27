@@ -48,7 +48,7 @@ const All_announcement = () => {
                                 <Announcement_post_timer>更新日期：{moment(announcementData[0].A_createTime).format('YYYY-MM-DD HH:mm:ss')}</Announcement_post_timer>
                                 <b style={{ margin: "0px 5px 0px 5px" }}>｜</b>
                                 <Announcement_post_publisher>post by {announcementData[0].M_name}</Announcement_post_publisher>
-                                <Announcement_tag BtnWidth="80px">{announcementData[0].A_category}</Announcement_tag>
+                                <Announcement_tag BtnWidth="80px" bgColor={announcementData[0].A_category !== '逾期' ? '#f69393' : '#6f6e6e'}>{announcementData[0].A_category}</Announcement_tag>
                             </Announcement_post_container>
 
                             <Announcement_img src={`http://140.137.51.13:5000/${announcementData[0].A_img}`} />
@@ -90,7 +90,7 @@ const Announcement_tag = styled.button`
     width: ${prop => prop.BtnWidth};
     border: none;
 	height: 20px;
-	background-color: #F69393;
+	background-color: ${prop => prop.bgColor};
 	border-radius: 15.5px;
 	color: #FFFFFF;
 	font-size: 8px;
