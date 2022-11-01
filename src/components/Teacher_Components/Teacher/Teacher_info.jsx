@@ -42,7 +42,7 @@ const Teacher_info = () => {
                         <Teacher_container>
 
                             <Left_block>
-                                <Teacher_image src={`http://140.137.51.13:5000/${item.TR_image}`}  />
+                                <Teacher_image src={`https://140.137.51.13:5000/${item.TR_image}`} />
                                 <Teacher_name>{item.TR_name}</Teacher_name>
 
                                 <Teacher_job>{item.TR_job}</Teacher_job>

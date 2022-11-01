@@ -77,7 +77,7 @@ const CMS_Image = () => {
 
                             <div key={item.I_id} style={{ display: "flex", flexDirection: "column" }}>
 
-                                <CMS_Upload_Image src={`http://140.137.51.13:5000/${item.I_file}`} />
+                                <CMS_Upload_Image src={`https://140.137.51.13:5000/${item.I_file}`} />
                                 <button onClick={() => { deleteImage(item.I_file) }} class="button is-danger" style={{ width: "60px", margin: "20px 0px 40px 0px" }}>刪除</button>
                             </div>
 
