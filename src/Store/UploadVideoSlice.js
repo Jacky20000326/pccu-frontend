@@ -3,7 +3,7 @@ import axios from "axios"
 export const PostUploadVideo = createAsyncThunk(
     'Post/UploadVideo',
     async (data) => {
-        let result = await axios.post('http://140.137.51.13:3003/api/UploadVideo/upload/video', data).then((res) =>
+        let result = await axios.post('https://140.137.51.13:3003/api/UploadVideo/upload/video', data).then((res) =>
             res.data
         )
         return result
@@ -13,7 +13,7 @@ export const PostUploadVideo = createAsyncThunk(
 export const GetUploadVideo = createAsyncThunk(
     'Get/UploadVideo',
     async () => {
-        let result = await axios.get('http://140.137.51.13:3003/api/UploadVideo/getVideo').then((res) => {
+        let result = await axios.get('https://140.137.51.13:3003/api/UploadVideo/getVideo').then((res) => {
             return res.data
         })
         return result
@@ -23,7 +23,7 @@ export const GetUploadVideo = createAsyncThunk(
 export const DeleteUploadVideo = createAsyncThunk(
     'Delete/Video',
     async (data) => {
-        let result = await axios.post("http://140.137.51.13:3003/api/UploadVideo/DeleteVideo", data).then(res =>
+        let result = await axios.post("https://140.137.51.13:3003/api/UploadVideo/DeleteVideo", data).then(res =>
             res.data)
         return result
     }

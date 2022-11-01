@@ -4,7 +4,7 @@ import { AiOutlineConsoleSql } from "react-icons/ai"
 export const PostTeacherInfo = createAsyncThunk(
     'Post/TeacherInfo',
     async (teacherInfo) => {
-        let result = await axios.post("http://140.137.51.13:3003/api/UploadTeacher/post/teacher", teacherInfo).then(res => res.data)
+        let result = await axios.post("https://140.137.51.13:3003/api/UploadTeacher/post/teacher", teacherInfo).then(res => res.data)
         console.log(result)
         return result
     }
@@ -13,7 +13,7 @@ export const PostTeacherInfo = createAsyncThunk(
 export const getTeacherInfo = createAsyncThunk(
     'Get/TeacherInfo',
     async () => {
-        let result = await axios.get("http://140.137.51.13:3003/api/UploadTeacher/get/teacherInfo").then(res => res.data)
+        let result = await axios.get("https://140.137.51.13:3003/api/UploadTeacher/get/teacherInfo").then(res => res.data)
         return result
     }
 
@@ -22,21 +22,21 @@ export const getTeacherInfo = createAsyncThunk(
 export const SearchTeacherInfo = createAsyncThunk(
     'Search/TeacherInfo',
     async (teacherName) => {
-        let result = await axios.post('http://140.137.51.13:3003/api/UploadTeacher/Search/teacherInfo', { teacherName }).then(res => res.data)
+        let result = await axios.post('https://140.137.51.13:3003/api/UploadTeacher/Search/teacherInfo', { teacherName }).then(res => res.data)
         return result
     }
 )
 export const UpdateTeacherInfo = createAsyncThunk(
     'Update/TeacherInfo',
     async (teacherInfo) => {
-        let result = await axios.post('http://140.137.51.13:3003/api/UploadTeacher/update/teacherInfo', teacherInfo).then(res => res.data)
+        let result = await axios.post('https://140.137.51.13:3003/api/UploadTeacher/update/teacherInfo', teacherInfo).then(res => res.data)
         return result
     }
 )
 export const DeleteTeacherInfo = createAsyncThunk(
     'Delete/TeacherInfo',
     async (teacherName) => {
-        let result = await axios.post('http://140.137.51.13:3003/api/UploadTeacher/delete/teacherInfo', teacherName).then(res => res.data)
+        let result = await axios.post('https://140.137.51.13:3003/api/UploadTeacher/delete/teacherInfo', teacherName).then(res => res.data)
         return result
     }
 )

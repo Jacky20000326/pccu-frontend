@@ -3,7 +3,7 @@ import axios from "axios"
 export const PostTopic = createAsyncThunk(
     "Post/Topic",
     async (topicInfo) => {
-        let result = await axios.post('http://140.137.51.13:3003/api/UploadTopic/post/topic', topicInfo).then(res => res.data)
+        let result = await axios.post('https://140.137.51.13:3003/api/UploadTopic/post/topic', topicInfo).then(res => res.data)
         console.log("post TopicInfo")
         return result
     }
@@ -12,7 +12,7 @@ export const PostTopic = createAsyncThunk(
 export const GetTopic = createAsyncThunk(
     "Get/Topic",
     async () => {
-        let result = await axios.get('http://140.137.51.13:3003/api/UploadTopic/get/topic').then(res => res.data)
+        let result = await axios.get('https://140.137.51.13:3003/api/UploadTopic/get/topic').then(res => res.data)
 
         return result
     }
@@ -20,7 +20,7 @@ export const GetTopic = createAsyncThunk(
 export const GetTopicDetail = createAsyncThunk(
     "Get/TopicDetail",
     async (res) => {
-        let result = await axios.post('http://140.137.51.13:3003/api/UploadTopic/get/topic/detail', { title: res }).then(res => res.data)
+        let result = await axios.post('https://140.137.51.13:3003/api/UploadTopic/get/topic/detail', { title: res }).then(res => res.data)
         return result
     }
 )
@@ -28,7 +28,7 @@ export const GetTopicDetail = createAsyncThunk(
 export const DeleteTopic = createAsyncThunk(
     'Delete/Topic',
     async (title) => {
-        let result = await axios.post('http://140.137.51.13:3003/api/UploadTopic/delete/topic', { title }).then(res => res.data)
+        let result = await axios.post('https://140.137.51.13:3003/api/UploadTopic/delete/topic', { title }).then(res => res.data)
         return result
     }
 )

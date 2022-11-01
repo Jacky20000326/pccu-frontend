@@ -63,7 +63,7 @@ const CMS_Announcement = () => {
 
     // update announcement
     const updateAnnouncementFn = async () => {
-        if (category == "" || title == "" || html == "" || ImageData == null || smellTitle == "" || expire == null) {
+        if (category == "請選擇" || title == "" || html == "" || ImageData == null || smellTitle == "" || expire == null) {
             alert("請將資料填寫完整")
             return
         }

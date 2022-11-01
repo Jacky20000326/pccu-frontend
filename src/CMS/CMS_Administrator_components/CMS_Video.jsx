@@ -36,14 +36,13 @@ const CMS_Video = () => {
     }
 
     const DeleteVideo = async (v_id) => {
-
         await dispatch(DeleteUploadVideo({ v_id }))
         await dispatch(GetUploadVideo())
         setExist("block")
     }
     useEffect(() => {
         dispatch(GetUploadVideo())
-        console.log('render')
+
 
     }, [])
     return (
@@ -51,7 +50,7 @@ const CMS_Video = () => {
             <CMS_Vider_Title_Container>
                 <CMS_Video_Txt>影片標題</CMS_Video_Txt>
                 <input className="input is-normal" value={title} onChange={(e) => { setTitle(item => item = e.target.value) }} type="text" placeholder="請輸入影片標題" />
-
+            
             </CMS_Vider_Title_Container>
             <CMS_Vider_Description_Container>
                 <CMS_Video_Txt>影片內文</CMS_Video_Txt>

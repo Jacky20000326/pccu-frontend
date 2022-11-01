@@ -10,8 +10,6 @@ const CMS_Topic = () => {
     }
     // get dispatch
     let dispatch = useDispatch()
-
-
     let TopicData = useSelector(item => item.UploadTopicReducer.topicData)
     let ResMsg = useSelector(item => item.UploadTopicReducer.dbMsg.message)
     let result = useSelector(item => item.UploadTopicReducer.dbMsg.result)
