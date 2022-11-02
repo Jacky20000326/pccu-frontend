@@ -17,7 +17,7 @@ const Login = () => {
     // navigate 
     const navigate = useNavigate();
     const login = async () => {
-        let respond = await axios.post("http://140.137.51.13:3003/api/Auth/login", { email, password }).then(res => res.data)
+        let respond = await axios.post("https://140.137.51.13:3003/api/Auth/login", { email, password }).then(res => res.data)
         if (!respond.result.token) {
             setBackendRes(item => item = respond.result)
         } else {

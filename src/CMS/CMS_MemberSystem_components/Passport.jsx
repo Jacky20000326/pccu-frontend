@@ -13,7 +13,7 @@ const Passport = () => {
     // validation
 
     const validationPassport = async (password) => {
-        let result = await axios.post("http://140.137.51.13:3003/api/Passport/validation", { password }).then(res => res.data)
+        let result = await axios.post("https://140.137.51.13:3003/api/Passport/validation", { password }).then(res => res.data)
         if (result.data == "驗證碼不正確") {
             setRes(result.data)
         } else {
