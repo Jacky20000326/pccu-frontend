@@ -29,7 +29,7 @@ const Video = () => {
                                 <PerVideoBlock>
                                     <VideoImage src={item.V_link} title="YouTube video player" full-screen viewing ></VideoImage>
                                     <VideoTxtContainer>
-                                        <VideoTitle><b>標題：</b>{item.V_title}</VideoTitle>
+                                        <VideoTitle>{item.V_title}</VideoTitle>
                                         <VideoDescription>{item.V_content}</VideoDescription>
                                     </VideoTxtContainer>
                                 </PerVideoBlock>
@@ -95,18 +95,28 @@ const PerVideoBlock = styled.div`
     display: flex;
     margin-bottom: 5%;
     margin-left: 5%; 
-   
+    transition: 0.5s;
     padding: 1.5em;
+    max-width: 70vw;
+    /* background: #e8f4fa; */
+    border-radius: 20px;
+    box-shadow:inset  3px 3px 28px -3px #49494918;
+    overflow: hidden;
+    
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
         margin-left: 0px; 
         padding: 0px;
         flex-direction: column;
         align-items: center;
+        margin: 0px auto;
+        margin-bottom: 20px;
 
 	}
 
     :hover{
-        box-shadow: 3px 3px 31px -18px rgba(0,0,0,0.3);
+        box-shadow:  3px 3px 28px -3px #49494918;
+        transform: scale(1.1);
+       
     }
     
 `
@@ -116,7 +126,7 @@ const VideoImage = styled.iframe`
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
         width: 70vw;
         max-height: 180px;
-
+        
 
 	}
     
@@ -140,8 +150,8 @@ const VideoTxtContainer = styled.div`
 
 `
 const VideoTitle = styled.h3`
-
-    font-size: 20px;
+    font-weight: 800;
+    font-size: 1.4rem;    
     color: #f59392;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
         font-size: 1.2rem;
@@ -153,6 +163,8 @@ const VideoDescription = styled.div`
     margin-top: 2em;
     width: 80%;
     color: #666666;
+    font-size: 1.2rem;
+    text-align: justify;
     @media (max-width: ${({ theme }) => theme.w_576.w}) {
         font-size: 0.9rem;
         text-align: center;

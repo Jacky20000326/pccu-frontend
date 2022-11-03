@@ -12,6 +12,7 @@ const LightBox = ({ title, LightboxState, CloseLightbox }) => {
     // get dispatch
 
     let topicDetailData = useSelector(item => item.UploadTopicReducer.topicDetailData)
+    console.log(topicDetailData)
 
 
     let [SlideIndex, setSlideIndex] = useState(0)
@@ -49,14 +50,18 @@ const LightBox = ({ title, LightboxState, CloseLightbox }) => {
                 <>
                     <LightBoxImageContainer>
 
+                        {
+                            topicDetailData.length == 1 ? null : <LeftArrow onClick={() => { preImage() }} />
+                        }
 
-                        <LeftArrow onClick={() => { preImage() }} />
                         {
                             <LightbocImage src={`https://140.137.51.13:5000/${topicDetailData[SlideIndex]?.TPI_src}`} ></LightbocImage>
                         }
 
-                        {/* <LightbocImage src={fakeSlideData[IndexOfImg]?.url} /> */}
-                        <RightArrow onClick={() => { nextImage() }} />
+                        {
+                            topicDetailData.length == 1 ? null : <RightArrow onClick={() => { nextImage() }} />
+                        }
+
                     </LightBoxImageContainer>
 
                     <LightBoxDescriptionContainer>
