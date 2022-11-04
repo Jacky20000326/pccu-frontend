@@ -40,7 +40,7 @@ const CMS_Announcement = () => {
     // search Announcement
     const SearchAnnouncement = async () => {
 
-        let respond = await axios.post("https//140.137.51.13:3003/api/UploadAnnouncement/find/Announcement", { title: SearchTitle }).then(res => res.data)
+        let respond = await axios.post("https://140.137.51.13:3003/api/UploadAnnouncement/find/Announcement", { title: SearchTitle }).then(res => res.data)
         if (SearchTitle == "") {
             alert("請輸入欲收尋的公告標題")
             return

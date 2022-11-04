@@ -111,7 +111,8 @@ const Teacher_container = styled.div`
     width: 100%;
     background-color: #fff;
     display: flex;
-    box-shadow: 0px 5px 42px -35px rgba(0,0,0,1);
+    box-shadow: inset rgb(101 101 101) 0px 5px 42px -35px;
+    border-radius: 20px;
     @media (max-width: ${({ theme }) => theme.w_900.w}) {
         flex-direction: column;
         box-shadow: none;

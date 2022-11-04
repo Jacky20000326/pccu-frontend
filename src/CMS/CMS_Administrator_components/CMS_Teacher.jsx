@@ -73,10 +73,25 @@ const CMS_Teacher = () => {
     }
 
     const UpdataTeacherData = async () => {
-        let teacherInfo = {
-            job, image, name, academic, gmail, phone, research, teach, searchValue
+        // 使用form格式傳值看看
+        if (!job || !imageName || !name || !academic || !gmail || !phone || !research || !teach) {
+            alert("請填寫所有內容才可送出")
+            return
         }
-        await dispatch(UpdateTeacherInfo(teacherInfo))
+        const ImageData = new FormData()
+        ImageData.append("Image_Path", image)
+        ImageData.append("job", job)
+        ImageData.append("name", name)
+        ImageData.append("academic", academic)
+        ImageData.append("gmail", gmail)
+        ImageData.append("phone", phone)
+        ImageData.append("research", research)
+        ImageData.append("teach", teach)
+
+        // let teacherInfo = {
+        //     job, image, name, academic, gmail, phone, research, teach, searchValue
+        // }
+        await dispatch(UpdateTeacherInfo(ImageData))
         await resetUserInputValue()
         setExist(item => item = "block")
 
