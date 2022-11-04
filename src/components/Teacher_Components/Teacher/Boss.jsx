@@ -41,7 +41,7 @@ const Boss = () => {
                                 <Teacher_master_image_container>
 
 
-                                    <Teacher_image src={`https://140.137.51.13:5000/${item.TR_image}`} />
+                                    <Teacher_image src={`${process.env.REACT_APP_API_URL_IMAGE}/${item.TR_image}`} />
                                     <Teacher_name>{item.TR_name}</Teacher_name>
                                 </Teacher_master_image_container>
                                 <Teacher_master_block_container>

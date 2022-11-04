@@ -55,7 +55,7 @@ const LightBox = ({ title, LightboxState, CloseLightbox }) => {
                         }
 
                         {
-                            <LightbocImage src={`https://140.137.51.13:5000/${topicDetailData[SlideIndex]?.TPI_src}`} ></LightbocImage>
+                            <LightbocImage src={`${process.env.REACT_APP_API_URL_IMAGE}/${topicDetailData[SlideIndex]?.TPI_src}`} ></LightbocImage>
                         }
 
                         {

@@ -40,7 +40,7 @@ const CMS_Announcement = () => {
     // search Announcement
     const SearchAnnouncement = async () => {
 
-        let respond = await axios.post("https://140.137.51.13:3003/api/UploadAnnouncement/find/Announcement", { title: SearchTitle }).then(res => res.data)
+        let respond = await axios.post(`${process.env.REACT_APP_API_URL}/api/UploadAnnouncement/find/Announcement`, { title: SearchTitle }).then(res => res.data)
         if (SearchTitle == "") {
             alert("請輸入欲收尋的公告標題")
             return
@@ -123,7 +123,7 @@ const CMS_Announcement = () => {
 
     editorConfig.MENU_CONF['uploadImage'] = {
         // 上传图片的配置
-        server: 'https://140.137.51.13:3003/api/UploadAnnouncement/post/content',
+        server: `${process.env.REACT_APP_API_URL}/api/UploadAnnouncement/post/content`,
         onSuccess(file, res) {
             console.log(`${file.name} 上传成功`, res)
         },

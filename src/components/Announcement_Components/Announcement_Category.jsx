@@ -9,7 +9,7 @@ const Announcement_Category = () => {
     let category = useSelector(item => item.AnnouncementReducer.value.category)
     let [data, setData] = useState(null)
     const getOtherAnnoucement = async () => {
-        let result = await axios.get("https://140.137.51.13:3003/api/UploadAnnouncement/get/PerAnnouncement", { category: category }).then(res => res.data)
+        let result = await axios.get(`${process.env.REACT_APP_API_URL}/api/UploadAnnouncement/get/PerAnnouncement`, { category: category }).then(res => res.data)
         let sortResult = await result.data.sort((a, b) => b.A_id - a.A_id)
         console.log(sortResult)
         setData(sortResult.slice(0, 4))
@@ -27,7 +27,7 @@ const Announcement_Category = () => {
                     <>
                         <Link to={`/announcement/detail/${item.A_id}`}>
                             <Announcement_other_Category_container>
-                                <Announcement_Category_image src={`https://140.137.51.13:5000/${item.A_img}`}></Announcement_Category_image>
+                                <Announcement_Category_image src={`${process.env.REACT_APP_API_URL_IMAGE}/${item.A_img}`}></Announcement_Category_image>
                                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
                                     <Announcement_Category_title>{item.A_smellTitle}</Announcement_Category_title>
                                     <Announcement_Category_time>{moment(item.A_createTime).format('YYYY-MM-DD')}</Announcement_Category_time>

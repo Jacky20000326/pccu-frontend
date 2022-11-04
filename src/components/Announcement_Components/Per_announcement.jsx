@@ -17,7 +17,7 @@ const All_announcement = () => {
 
 
     const getPerAnnouncementData = async (data) => {
-        let respond = await axios.post('https://140.137.51.13:3003/api/UploadAnnouncement/get/search/Announcement', { id: data }).then(res => res.data)
+        let respond = await axios.post(`${process.env.REACT_APP_API_URL}/api/UploadAnnouncement/get/search/Announcement`, { id: data }).then(res => res.data)
         console.log(respond)
         setAnnouncementData(item => item = respond)
 
@@ -51,7 +51,7 @@ const All_announcement = () => {
                                 <Announcement_tag BtnWidth="80px" bgColor={announcementData[0].A_category !== '逾期' ? '#f69393' : '#6f6e6e'}>{announcementData[0].A_category}</Announcement_tag>
                             </Announcement_post_container>
 
-                            <Announcement_img src={`https://140.137.51.13:5000/${announcementData[0].A_img}`} />
+                            <Announcement_img src={`${process.env.REACT_APP_API_URL_IMAGE}/${announcementData[0].A_img}`} />
                             < Announcement_content >
                                 <div dangerouslySetInnerHTML={{ __html: announcementData[0].A_content }}></div>
 

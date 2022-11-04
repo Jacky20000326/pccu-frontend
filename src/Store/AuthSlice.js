@@ -9,7 +9,7 @@ import axios from "axios"
 export const GetAllMember = createAsyncThunk(
     'GetAllMember',
     async () => {
-        let result = await axios.get("https://140.137.51.13:3003/api/auth/getAllMember").then(res => res.data)
+        let result = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/getAllMember`).then(res => res.data)
         return result.data
     }
 )
@@ -17,7 +17,7 @@ export const GetAllMember = createAsyncThunk(
 export const DeletePermissions = createAsyncThunk(
     'Delete/permissions',
     async (data) => {
-        let result = await axios.post("https://140.137.51.13:3003/api/auth/delete/permissions", data).then(res => res.data)
+        let result = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/delete/permissions`, data).then(res => res.data)
         return result
     }
 )

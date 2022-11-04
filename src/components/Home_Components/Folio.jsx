@@ -12,7 +12,6 @@ const Folio = () => {
     let TopicData = useSelector(item => item.UploadTopicReducer.topicData)
     let Loaging = useSelector(item => item.UploadTopicReducer.loaging)
 
-    console.log(TopicData)
 
 
 
@@ -51,7 +50,7 @@ const Folio = () => {
                             {
                                 TopicData.map((item, index) => (
                                     <Folio_cube onClick={() => { GetCurrentTopic(TopicData[index]) }}>
-                                        <Folio_Container_image src={`https://140.137.51.13:5000/${item.TP_img}`} />
+                                        <Folio_Container_image src={`${process.env.REACT_APP_API_URL_IMAGE}/${item.TP_img}`} />
                                         <Folio_mask id='mask'>
                                             <Folio_mask_title>{item.TP_title}</Folio_mask_title>
                                             <Folio_mask_content>{item.TP_content}</Folio_mask_content>

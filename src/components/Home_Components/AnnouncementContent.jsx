@@ -21,7 +21,7 @@ const AnnouncementContent = React.memo(({ item }) => {
 					</AnnouncementStyled>
 					<AnnouncementImageContainer>
 
-						<AnnouncementImage src={`https://140.137.51.13:5000/${item.A_img}`} ></AnnouncementImage>
+						<AnnouncementImage src={`${process.env.REACT_APP_API_URL_IMAGE}/${item.A_img}`} ></AnnouncementImage>
 					</AnnouncementImageContainer>
 
 				</div>

@@ -4,7 +4,7 @@ import axios from "axios"
 export const getUploadImageArray = createAsyncThunk(
     "get/UploadImage",
     async () => {
-        let data = await axios.get("https://140.137.51.13:3003/api/uploadImage/getImage").then((res) => {
+        let data = await axios.get(`${process.env.REACT_APP_API_URL}/api/uploadImage/getImage`).then((res) => {
             return res.data
         })
         return data
@@ -15,7 +15,7 @@ export const getUploadImageArray = createAsyncThunk(
 export const postUploadImage = createAsyncThunk(
     "post/UploadImage",
     async (aug) => {
-        let data = await axios.post("https://140.137.51.13:3003/api/uploadImage/post/image", aug).then((res) => {
+        let data = await axios.post(`${process.env.REACT_APP_API_URL}/api/uploadImage/post/image`, aug).then((res) => {
             return res.data
         })
         return data
@@ -26,7 +26,7 @@ export const postUploadImage = createAsyncThunk(
 export const postDeleteImage = createAsyncThunk(
     "post/DeleteImage",
     async (fileName) => {
-        let data = await axios.post("https://140.137.51.13:3003/api/uploadImage/delete/uploadImage", { fileName }).then((res) => {
+        let data = await axios.post(`${process.env.REACT_APP_API_URL}/api/uploadImage/delete/uploadImage`, { fileName }).then((res) => {
             return res.data
         })
         return data

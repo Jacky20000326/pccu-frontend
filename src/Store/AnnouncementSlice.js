@@ -3,7 +3,7 @@ import axios from "axios";
 export const postAnnouncement = createAsyncThunk(
 	'Post/Announcement',
 	async (data) => {
-		let result = await axios.post('https://140.137.51.13:3003/api/UploadAnnouncement/post/announcement', data).then(res => res.data)
+		let result = await axios.post(`${process.env.REACT_APP_API_URL}/api/UploadAnnouncement/post/announcement`, data).then(res => res.data)
 		console.log(result)
 		return result
 
@@ -15,7 +15,7 @@ export const postAnnouncement = createAsyncThunk(
 export const updateAnnouncement = createAsyncThunk(
 	'Post/Announcement',
 	async (data) => {
-		let result = await axios.post('https://140.137.51.13:3003/api/UploadAnnouncement/update/Announcement', data).then(res => res.data)
+		let result = await axios.post(`${process.env.REACT_APP_API_URL}/api/UploadAnnouncement/update/Announcement`, data).then(res => res.data)
 		console.log(result)
 		return result
 
@@ -27,7 +27,7 @@ export const updateAnnouncement = createAsyncThunk(
 export const getAllAnnouncement = createAsyncThunk(
 	'Get/Announcement',
 	async () => {
-		let result = await axios.get('https://140.137.51.13:3003/api/UploadAnnouncement/get/PerAnnouncement').then(res => res.data)
+		let result = await axios.get(`${process.env.REACT_APP_API_URL}/api/UploadAnnouncement/get/PerAnnouncement`).then(res => res.data)
 
 		return result
 	}
