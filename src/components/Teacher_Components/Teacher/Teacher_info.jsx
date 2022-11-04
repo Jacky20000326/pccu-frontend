@@ -69,7 +69,6 @@ const Teacher_info = () => {
                                     <Title>專長</Title>
                                     <div style={{ paddingLeft: "20px" }}>
                                         <Flex_container>
-                                            <AiOutlineMonitorStyle />
                                             <Teacher_study>{item.TR_research}
                                             </Teacher_study>
                                         </Flex_container>
