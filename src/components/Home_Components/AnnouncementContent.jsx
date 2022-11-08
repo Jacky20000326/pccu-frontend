@@ -129,7 +129,8 @@ const AnnouncementImage = styled.img`
 	@media (max-width: ${({ theme }) => theme.w_576.w}) {
 		min-width: 100px;
 		width: 100%;
-		height: 120px;
+		height: 50%;
+		max-height: 100px;
 	}
 	
 `;

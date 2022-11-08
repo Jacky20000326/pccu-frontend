@@ -47,8 +47,10 @@ const initialState = {
     bossData: null,
     ProfessorData: null,
     AssistantData: null,
+    ConcurrentlyHeldData: null,
     SearchTearchData: null,
     loading: true,
+
     TeacherInofoLoading: true,
     dbMsg: {
         result: "",
@@ -71,6 +73,10 @@ const UploadTeacherSlice = createSlice({
         getAssistant: (state) => {
             let result = state.getteacherFilterData.filter(item => item.TR_job == '副教授')
             state.AssistantData = result
+        },
+        getConcurrentlyHeld: (state) => {
+            let result = state.getteacherFilterData.filter(item => item.TR_job == '兼任教師')
+            state.ConcurrentlyHeldData = result
         },
         getFilterJob: (state, action) => {
             if (action.payload == "請選擇" || action.payload == "全部") {
@@ -168,4 +174,4 @@ const UploadTeacherSlice = createSlice({
 })
 
 export default UploadTeacherSlice.reducer
-export const { getBoss, getProfessor, getAssistant, getFilterJob, getFilterResearch } = UploadTeacherSlice.actions
+export const { getBoss, getProfessor, getAssistant,getConcurrentlyHeld, getFilterJob, getFilterResearch } = UploadTeacherSlice.actions

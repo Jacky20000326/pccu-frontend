@@ -48,7 +48,7 @@ const All_announcement = () => {
                                 <Announcement_post_timer>{moment(announcementData[0].A_createTime).format('YYYY-MM-DD HH:mm:ss')}</Announcement_post_timer>
                                 <b style={{ margin: "0px 5px 0px 5px" }}>｜</b>
                                 <Announcement_post_publisher>post by {announcementData[0].M_name}</Announcement_post_publisher>
-                                <Announcement_tag BtnWidth="80px" bgColor={announcementData[0].A_category !== '逾期' ? '#f69393' : '#6f6e6e'}>{announcementData[0].A_category}</Announcement_tag>
+                                <Announcement_tag bgColor={announcementData[0].A_category !== '逾期' ? '#f69393' : '#6f6e6e'}>{announcementData[0].A_category}</Announcement_tag>
                             </Announcement_post_container>
 
                             <Announcement_img src={`${process.env.REACT_APP_API_URL_IMAGE}/${announcementData[0].A_img}`} />
@@ -87,7 +87,7 @@ const Announcement_post_timer = styled.p`
 `
 const Announcement_post_publisher = styled.p``
 const Announcement_tag = styled.button`
-    width: ${prop => prop.BtnWidth};
+    padding: 0px 10px 0px 10px;
     border: none;
 	height: 20px;
 	background-color: ${prop => prop.bgColor};

@@ -105,7 +105,7 @@ const All_Announcement = () => {
 						})
 					}
 					{
-						Search_Result.length - loadingNumber * 5 > 0 && <LoadingMore onClick={() => { getMoreAnnouncement() }}>載入更多</LoadingMore>
+						Loading ? null : Search_Result.length - loadingNumber * 5 > 0 && <LoadingMore onClick={() => { getMoreAnnouncement() }}>載入更多</LoadingMore>
 
 
 					}

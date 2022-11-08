@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Boss from "../Teacher_Components/Teacher/Boss"
 import Professor from "../Teacher_Components/Teacher/Professor"
 import Assistant from "../Teacher_Components/Teacher/Assistant"
+import ConcurrentlyHeld from '../Teacher_Components/Teacher/ConcurrentlyHeld'
 import { motion } from "framer-motion"
 import { useDispatch, useSelector } from "react-redux"
 import Filter from "../Teacher_Components/Teacher_filter/Filter"
@@ -37,6 +38,7 @@ const Teacher = () => {
                         <Boss />
                         <Professor />
                         <Assistant />
+                        <ConcurrentlyHeld />
 
 
 
